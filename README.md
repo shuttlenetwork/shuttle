@@ -10,7 +10,7 @@
 
 ## Discord Server
 
-Press the join button to join the server:
+Press the join button to join our server:
 
 [![Join us on Discord](https://invidget.switchblade.xyz/xi?theme=dark)](https://discord.gg/xi)
 
