@@ -1,0 +1,392 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
+
+/* ---- reset ---- */ body{ margin:0; font:normal 75% Arial, Helvetica, sans-serif; } canvas{ display: block; vertical-align: bottom; } /* ---- particles.js container ---- */ #particles-js{ position:absolute; width: 100%; height: 100%; background-color: #000000; background-image: url(""); background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; } /* ---- stats.js ---- */ .count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9; font-size: .8em; text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } .js-count-particles{ font-size: 1.1em; } #stats, .count-particles{ -webkit-user-select: none; margin-top: 5px; margin-left: 5px; } #stats{ border-radius: 3px 3px 0 0; overflow: hidden; } .count-particles{ border-radius: 0 0 3px 3px; }
+
+/* Frame */
+.frame-container {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: none;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+footer {
+  margin-top: auto;
+  width: 93%;
+  align-self: center;
+  height: 80px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+footer a,
+footer span {
+  margin: auto;
+  text-decoration: none;
+  color: #fff;
+  font-size: 15px;
+  font-family: "Poppins";
+}
+
+footer a {
+  cursor: pointer;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+#form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 30px;
+  outline: none;
+  font-size: 16px;
+  padding: 8px;
+  height: 30px;
+  background-color: #1c1c1c;
+  padding-right: 10px;
+  color: #616161;
+}
+
+.search {
+  border-radius: 5px;
+  outline: none;
+  font-size: 16px;
+  padding: 5px;
+  width: 100%;
+  height: 30px;
+  background-color: inherit;
+  color: #616161;
+  border: none;
+}
+.submit-button {
+  background: transparent;
+  border: none !important;
+}
+.head {
+  font-family: "Poppins";
+  font-size: 36px;
+  color: #824dff;
+  width: 100%;
+  text-align: center;
+}
+.nav-logo {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px 0px 0px 0px;
+  margin-bottom: 0px;
+}
+html {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+:root {
+  --accent-color: #fff;
+  --gradient-color: #fbfbfb;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  /*background-image: linear-gradient(to right, #4B0082, #4B0082);*/
+  background-color: #000000;
+  margin: 0px;
+  padding: 0px;
+}
+.alignment-container-1 {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.i1 {
+  background-color: #824dff;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 50px;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 400px;
+  text-align: center;
+}
+.i1::placeholder {
+  color: white;
+  text-align: center;
+  font-family: "Poppins";
+}
+.sidebar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #202020;
+}
+.sidebar a {
+  color: #fff;
+  padding: 10px;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
+  transition: all 0.5s ease;
+}
+.sidebar a.active {
+  color: #000000;
+  background: #f3f3f3;
+  border-radius:20px;
+}
+.sidebar a span {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#check {
+  display: none;
+}
+.settingsInput {
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border-color: #ffffff;
+    border-style: solid;
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+  border: white;
+}
+label #btn,
+label #cancel {
+  position: absolute;
+  left: 5px;
+  cursor: pointer;
+  color: #ffffff;
+  border-radius: 15px;
+  margin: 15px 30px;
+  font-size: 29px;
+  background-color: transparent;
+  height: 45px;
+  width: 45px;
+  text-align: center;
+
+  line-height: 45px;
+  transition: all 0.5s ease;
+}
+label #cancel {
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ .sidebar {
+  left: 0;
+}
+#check:checked ~ label #btn {
+  margin-left: 245px;
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ label #cancel {
+  margin-left: 245px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar > a.active,
+.sidebar > a:hover:nth-child(even) {
+  --accent-color: #555555;
+  --gradient-color: #222222;
+}
+.sidebar a.active,
+.sidebar > a:hover:nth-child(odd) {
+  --accent-color: #555555;
+  --gradient-color: #222222;
+}
+
+.frame {
+  width: 50%;
+  height: 30%;
+  margin: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+.button-1:hover,
+.button-1:focus {
+  background-color: rgba(0, 0, 0, 0);
+}
+.button {
+  background-color: rgba(0, 0, 0, 0);
+  color: #ffffff;
+  border-color: #ffffff;
+  border-style: solid;
+  border-radius: 5px;
+  width: 150px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  height: 40px;
+}
+.button:hover,
+.button:focus {
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.settings-head {
+  font-family: "Poppins";
+  font-size: 36px;
+  color: #8151ff;
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+}
+.settings-head2 {
+  font-family: "Poppins";
+  font-size: 24px;
+  color: #8151ff;
+}
+.browsers {
+  font-family: "Poppins";
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  cursor: pointer;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  border-color: #ffffff;
+    border-style: solid;
+}
+option {
+  font-family: "Poppins";
+  border-radius: 5px;
+}
+
+.box {
+  width: 400px;
+  height: 100px;
+  background-image: linear-gradient(to right, #242424, #2e2e2e);
+  border-image: linear-gradient(to right, green, blue);
+  border-radius: 10px;
+  display: flex;
+  float: left;
+  margin-left: 50px;
+  box-shadow: #242424 2px;
+  margin-bottom: 15px;
+}
+.b2 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+.gs-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+.gs-img:hover {
+  transition: 1s;
+  transform: scale(1.3);
+  z-index: 2;
+}
+
+.h7 {
+  text-align: center;
+  margin-left: 140px;
+  position: absolute;
+  font-size: 30px;
+}
+
+.h7:hover {
+  transition: 1s;
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+.gs-box-header {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+
+.gs-box-button:hover {
+  color: black;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+/* SEARCH */
+#nav {
+  min-height: 5vh;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#message {
+  text-align: center;
+}
+#ifr {
+  width: 100%;
+  height: 90%;
+  min-height: 95vh;
+  display: block;
+  border: 0px;
+  border-color: transparent;
+}
+#nav a {
+  margin-left: 10px;
+}
+#nav span {
+  color: white;
+  font-family: "Poppins";
+}
+#align {
+  display: none;
+  z-index: 100000;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+ul li::before {
+  content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: white; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}

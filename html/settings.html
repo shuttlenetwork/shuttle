@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSZE0VTXD"></script>
+    <title>Shuttle</title>
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <script src="https://kit.fontawesome.com/be27c0ad9d.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/index.js" defer></script>
+    <script src="/assets/js/abc.js"></script>
+    <script src="/assets/js/settings.js"></script>
+    <script type='text/javascript' src='//expectedballpaul.com/45/34/f3/4534f3c01a4be5a6293543f3fb991ae0.js'></script>
+  </head>
+  <body>
+    <div style="width: 100%;">
+      <div id="stars"></div>
+      <div id="stars2"></div>
+      <div id="stars3"></div>
+    </div>
+    <!-- Navbar start -->
+    <div class="sidebar" style="margin-bottom:10px;">
+      <a href="/" style="background-color: #202020;height:45px;color:black;"><span class="fa-stack fa-sm" style="display:flex;margin-bottom:50%">
+        <i class="fa fa-circle fa-stack-2x"></i>
+        <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
+      </span> </a>
+      <a href="/" style="font-family:'Poppins';"><span>Home</span></a>
+      <a href="/chat" style="font-family:'Poppins';"><span>Chat</span></a>
+      <a href="/apps" style="font-family:'Poppins';"><span>Apps</span></a>
+      <a href="/games" style="font-family:'Poppins';"><span>Games</span></a>
+      <a href="/discord" style="font-family:'Poppins';"><span>Chat Box</span></a>
+      <a href="/settings" class="active" style="font-family:'Poppins';"><span>Settings</span></a>
+    </div>
+    <!-- Navbar end -->
+    <div class="alignment-container-1">
+      <h1 class="settings-head">Settings</h1>
+      <h2 class="settings-head2">about:blank cloaking</h2>
+      <button class="button" onclick="goBlank()">Go about:blank</button>
+      <h2 class="settings-head2">Title</h2>
+      <input type="text" class="settingsInput button" onchange="document.title = this.value; localStorage.setItem('title', this.value)" placeholder="Change Title" />
+      <input type="text" class="settingsInput button" onchange="changeFavicon(this.value); localStorage.setItem('favicon', this.value)" placeholder="Change Favicon (URL)" />
+      <br />
+      <h2 class="settings-head2">Browser</h2>
+      <select class="browsers" id="browsers" onchange="changeSearch(this)">
+        <option>Google</option>
+        <option>DuckDuckGo</option>
+        <option>Brave</option>
+      </select>
+    </div>
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+  </body>
+</html>
