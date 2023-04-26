@@ -22,3 +22,4 @@ cd shuttle
 npm install
 node .
 ```
+## Info We do not recommended using replit, as it chashes alot
