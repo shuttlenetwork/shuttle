@@ -23,3 +23,4 @@ npm install
 node .
 ```
 ## Info We do not recommended using replit, as it chashes alot
+You are welcome to submit pull requests aimed at enhancing the shuttle.
