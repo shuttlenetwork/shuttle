@@ -130,6 +130,17 @@ body{position:relative}.loader-container{position:fixed;top:0;left:0;width:100%;
     </div>
     <script src="/uv/uv.bundle.js"></script>
     <script src="/uv/uv.config.js"></script>
+    <script>
+      window.addEventListener("load", function() {
+        const loaderContainer = document.querySelector(".loader-container");
+        setTimeout(function() {
+          loaderContainer.style.opacity = "0";
+          setTimeout(function() {
+            loaderContainer.style.display = "none";
+          }, 500);
+        }, 1000);
+      });
+    </script>
     <script type='text/javascript' src='//subjectslisted.com/c6/8d/ac/c68dac6e6f3b965f772e2057fa50f0b4.js'></script>
   </body>
 </html>
