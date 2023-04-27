@@ -8,6 +8,12 @@
 [![Deploy to Amplify Console](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/amplifyconsole.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/shuttlenetwork/shuttle)
 [![Run on Google Cloud](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/googlecloud.svg)](https://deploy.cloud.run/?git_repo=https://github.com/shuttlenetwork/shuttle)
 
+## To Do 
+You are welcome to submit pull requests aimed at enhancing shuttle.
+- [x] Open Source
+- [ ] Fix games and apps page
+- [ ] Add more setting features
+
 ## Discord Server
 
 Press the join button to join our server:
@@ -24,4 +30,3 @@ node .
 ```
 ## Info 
 We do not recommended using replit, as it chashes alot
-You are welcome to submit pull requests aimed at enhancing the shuttle.
