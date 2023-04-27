@@ -10,9 +10,10 @@
 
 ## To Do 
 You are welcome to submit pull requests aimed at enhancing shuttle.
-- [x] Open Source
-- [ ] Fix games and apps page
-- [ ] Add more setting features
+- [ ] a:b auto cloaking
+- [ ] Add Games
+- [ ] Add Apps
+- [ ] Themes
 
 ## Discord Server
 
