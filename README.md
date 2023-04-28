@@ -33,3 +33,4 @@ node .
 ```
 ## Info 
 We do not recommended using replit
+It is not our fault if you upload Shuttle to another service and your account gets banned! Proxies use a lot of bandwidth and are not generally allowed on free hosting platforms.
