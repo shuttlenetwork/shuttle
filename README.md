@@ -1,8 +1,8 @@
 # Shuttle Proxy
 
-> Note
+> **Note**
 >
-> Shuttle is a fork of Amethyst v2. You can find Amethyst v2 [here](https://github.com/amethystnetwork-dev/Amethyst-Beta)
+> **Shuttle is a fork of Amethyst v2. You can find Amethyst v2 [here](https://github.com/amethystnetwork-dev/Amethyst-Beta)**
 
 [![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://github.com/shuttlenetwork/shuttle/wiki#how-to-deploy-to-onrender)
 [![Deploy to Cyclic](https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg)](https://app.cyclic.sh/api/app/deploy/shuttlenetwork/shuttle)

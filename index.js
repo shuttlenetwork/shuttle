@@ -42,6 +42,7 @@ httpServer.on('upgrade', (req, socket, head) => {
 });
 
 httpServer.listen({ port: process.env.PORT || 8080 }, () => {
-  console.log(`\x1b[42m\x1b[1m shuttle\n Port: ${port}\x1b[0m`);
+  const addr = httpServer.address();
+  console.log(`\x1b[42m\x1b[1m shuttle\n Port: ${addr.port}\x1b[0m`);
   console.log('\x1b[41m\x1b[5m\x1b[1m\x1b[33m PLEASE NOTE: Shuttle is in a development stage. Expect bugs!\x1b[0m');
 });

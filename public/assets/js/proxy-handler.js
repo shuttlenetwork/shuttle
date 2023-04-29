@@ -2,11 +2,10 @@ function proxy() {
 	if ('serviceWorker' in navigator) {
 		var i = document.getElementById('ifr');
 		let url = atob(decodeURIComponent(window.location.hash.slice(1)));
-		console.log(url)
 		navigator.serviceWorker.register('/uv.sw-handler.js', {scope: __uv$config.prefix}).then(() => {
 			i.src = __uv$config.prefix + __uv$config.encodeUrl(url);
 			var m = document.getElementById('m');
-			document.getElementById('settings').style.display = 'none';
+			//document.getElementById('settings').style.display = 'none';
 			i.onload = function() {
 				m.innerText = i.contentDocument.title;
 				window.location.hash = btoa(__uv$config.decodeUrl(i.contentWindow.location.href.split('/')[4]))

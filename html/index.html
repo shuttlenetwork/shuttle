@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- Loading Animation -->
-    <style>
-body{position:relative}.loader-container{position:fixed;top:0;left:0;width:100%;height:100%;display:flex;justify-content:center;align-items:center;background-color:#000;z-index:9999;transition:opacity .5s ease-out}.loader{width:100px;height:100px;border:20px solid #000;border-top:20px solid #fff;border-radius:50%;animation:1s linear infinite spin,1s ease-out fadeIn}@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}@keyframes fadeIn{0%{opacity:0}100%{opacity:1}}
-    </style>
-    <!-- Loading Animation End -->
     <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <meta property="og:title" content="shuttle" />
@@ -23,10 +18,6 @@ body{position:relative}.loader-container{position:fixed;top:0;left:0;width:100%;
     <title>Shuttle</title>
   </head>
   <body id="body">
-    <div class="loader-container">
-      <div class="loader"></div>
-    </div>
-    <script src="assets/js/cookie.js"></script>
     <div id="align">
       <nav id="nav">
         <a href="/">
@@ -85,16 +76,5 @@ body{position:relative}.loader-container{position:fixed;top:0;left:0;width:100%;
     </div>
     <script src="/uv/uv.bundle.js"></script>
     <script src="/uv/uv.config.js"></script>
-    <script>
-      window.addEventListener("load", function() {
-        const loaderContainer = document.querySelector(".loader-container");
-        setTimeout(function() {
-          loaderContainer.style.opacity = "0";
-          setTimeout(function() {
-            loaderContainer.style.display = "none";
-          }, 500);
-        }, 1000);
-      });
-    </script>
   </body>
 </html>
