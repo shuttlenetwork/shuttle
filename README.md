@@ -1,5 +1,9 @@
 # Shuttle Proxy
 
+> Note
+>
+> Shuttle is a fork of Amethyst v2. You can find Amethyst v2 [here](https://github.com/amethystnetwork-dev/Amethyst-Beta)
+
 [![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://github.com/shuttlenetwork/shuttle/wiki#how-to-deploy-to-onrender)
 [![Deploy to Cyclic](https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg)](https://app.cyclic.sh/api/app/deploy/shuttlenetwork/shuttle)
 [![Remix on Glitch](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/glitch.svg)](https://glitch.com/edit/#!/import/github/shuttlenetwork/shuttle)
@@ -21,7 +25,7 @@ You are welcome to submit pull requests aimed at enhancing shuttle.
 
 Press the join button to join our server:
 
-[![Join us on Discord](https://invidget.switchblade.xyz/xi?theme=dark)](https://discord.gg/xi)
+[![Join us on Discord](https://invidget.switchblade.xyz/xi)](https://discord.gg/xi)
 
 ## Setup
 
@@ -29,8 +33,8 @@ Press the join button to join our server:
 git clone https://github.com/shuttlenetwork/shuttle
 cd shuttle
 npm install
-node .
+npm start
 ```
 ## Info 
-We do not recommended using replit
-It is not our fault if you upload Shuttle to another service and your account gets banned! Proxies use a lot of bandwidth and are not generally allowed on free hosting platforms.
+- We do not recommended using Replit
+- It is not our fault if you upload Shuttle to another service and your account gets banned! Proxies use a lot of bandwidth and are not generally allowed on free hosting platforms.

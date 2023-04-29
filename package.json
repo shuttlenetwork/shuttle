@@ -1,11 +1,10 @@
 {
-  "name": "Shuttle",
+  "name": "shuttle",
   "version": "1.0.0",
   "description": "Unblocker website w/ Ultraviolet",
-  "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ."
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -14,7 +13,6 @@
   "keywords": [
     "proxy"
   ],
-  "author": "",
   "license": "GPL-3.0-or-later",
   "homepage": "https://github.com/shuttlenetwork/shuttle",
   "dependencies": {
@@ -25,8 +23,5 @@
   },
   "devDependencies": {
     "http-server": "^14.1.1"
-  },
-  "engines": {
-    "node": "16.x"
   }
 }
