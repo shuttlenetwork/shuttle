@@ -13,7 +13,7 @@
 ## To Do 
 You are welcome to submit pull requests aimed at enhancing shuttle.
 - [ ] a:b auto cloaking
-- [ ] Add Games
+- [x] Add Games
 - [ ] Add Apps
 - [ ] Themes
 
