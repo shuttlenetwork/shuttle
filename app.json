@@ -1,0 +1,23 @@
+{
+  "name": "Shuttle Proxy",
+  "description": "A simple web proxy",
+  "image": "heroku/nodejs",
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-nodejs.git"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "scripts": {
+    "start": "node ."
+  },
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "Free"
+    }
+  }
+}
