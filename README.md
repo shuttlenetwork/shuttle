@@ -12,10 +12,11 @@
 
 ## To Do 
 You are welcome to submit pull requests aimed at enhancing shuttle.
-- [ ] a:b auto cloaking
-- [x] Add Games
-- [ ] Add Apps
-- [ ] Themes
+- [x] 10 stars for games
+- [ ] 20 stars for apps
+- [ ] 25 stars for particals
+- [ ] 30 stars for custom cursor
+- [ ] 50 stars for themes
 
 ## Discord Server
 
