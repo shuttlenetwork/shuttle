@@ -2,7 +2,7 @@ import createBareServer from '@tomphttp/bare-server-node';
 import http from 'node:http';
 import fs from 'fs/promises';
 import { createRequire } from 'module';
-import express from 'express'; // Moved this line outside of the main function
+import express from 'express';
 const require = createRequire(import.meta.url);
 const port = process.env.PORT || 80;
 
@@ -10,10 +10,10 @@ async function main() {
   // Create Bare
   const bare = createBareServer('/bare/');
 
-  const app = express(); // Moved this line inside the main function
+  const app = express();
 
-  // Set up caching for static files
-  const cacheOptions = { maxAge: 86400000 }; // Cache static files for 1 day (in milliseconds)
+  // caching for static files
+  const cacheOptions = { maxAge: 86400000 }; 
   app.use(express.static('./public', cacheOptions));
 
   // Use route handling middleware for Express
