@@ -1,7 +1,7 @@
 {
   "name": "Shuttle",
   "version": "1.0.0",
-  "description": "Unblocker website w/ Ultraviolet",
+  "description": "Experience the global internet using Shuttle, the swiftest and most uncluttered proxy solution. Relish a heightened level of privacy during your online sessions, free from censorship.",
   "main": "index.js",
   "type": "module",
   "scripts": {
@@ -15,7 +15,7 @@
     "proxy"
   ],
   "author": "",
-  "license": "GPL-3.0-or-later",
+  "license": "https://raw.githubusercontent.com/shuttlenetwork/shuttle/main/LICENSE.md",
   "homepage": "https://github.com/shuttlenetwork/shuttle",
   "dependencies": {
     "@titaniumnetwork-dev/ultraviolet": "^1.0.5",
