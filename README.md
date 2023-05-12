@@ -13,9 +13,9 @@
 ## To Do 
 You are welcome to submit pull requests aimed at enhancing shuttle.
 - [x] 10 stars for games
-- [ ] 20 stars for apps
-- [ ] 25 stars for particals
-- [ ] 30 stars for custom cursor
+- [x] 20 stars for particals
+- [x] 25 stars for custom cursor
+- [ ] 30 stars for apps
 - [ ] 50 stars for themes
 
 ## Discord Server
