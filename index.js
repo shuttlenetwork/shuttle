@@ -1,4 +1,3 @@
-import createBareServer from '@tomphttp/bare-server-node';
 import http from 'node:http';
 import fs from 'fs/promises';
 import { createRequire } from 'module';
