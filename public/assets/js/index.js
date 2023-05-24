@@ -171,28 +171,25 @@ class GlitchEffect {
 })()
 
 var splash = [
-  "Surf the web incognito...or at least try to.",
-  "Access the internet like a ninja!",
-  "Go ahead, browse your ex's social media profiles. We won't judge.",
-  "Bypass those pesky internet filters with ease.",
-  "Your boss will never know you're shopping online...probably.",
-  "Because sometimes, the internet just needs to mind its own business.",
-  "Unlock the full potential of the internet!",
-  "Experience the internet as it was meant to be - unrestricted!",
-  "No more geographical restrictions! Bring on the Netflix binges.",
-  "Your secret online identity is safe with us.",
-  "Because why settle for one IP address when you can have them all?",
-  "We make the internet more fun...and a little bit sneaky.",
-  "Be whoever you want to be on the internet!",
-  "Anonymity is our middle name. (Actually, it's Proxy, but you get the point.)",
-  "Bypass censorship and unlock the power of information!",
-  "Hide your tracks like a pro!",
-  "Because everyone deserves a little privacy online.",
-  "Access the web like a pro without leaving a trace!",
+  "shuttle is so hot",
+  "Go ahead, browse your ex's social media profiles.",
   "We take your online privacy as seriously as your ex takes stalking your social media profiles.",
-  "tristan on top",
-  "hi dad",
+  "Check our our github.",
+  "Shhh... we won't tell anyone you're here.",
+  "Join our discord for more links.",
+  "We have ads to support the creators.",
+  "Imagine not using shuttle",
+  "No website is out of your reach now.",
+  "Your online freedom, our promise.",
+  "Because a blocked internet, is no internet at all.",
+  "Site blocked? Not on our watch!",
+  "What site r u going on.",
 ]
 
 var p = document.querySelector("#splash")
 p.innerHTML = splash[Math.floor(Math.random() * (splash.length))]
+
+p.style.color = "rgba(180, 180, 180, 0.5)";
+p.style.fontFamily = "Poppins, sans-serif"; 
+p.style.marginBottom = "30px"; 
+p.style.textAlign = "center";
