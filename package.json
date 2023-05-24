@@ -1,5 +1,5 @@
 {
-  "name": "Shuttle",
+  "name": "pigTaco",
   "version": "1.0.0",
   "description": "Experience the global internet using Shuttle, the swiftest and most uncluttered proxy solution. Relish a heightened level of privacy during your online sessions, free from censorship.",
   "main": "index.js",
@@ -12,14 +12,12 @@
     "url": "git+https://github.com/shuttlenetwork/shuttle"
   },
   "keywords": [
-    "proxy"
+    "taco"
   ],
   "author": "",
   "license": "https://raw.githubusercontent.com/shuttlenetwork/shuttle/main/LICENSE.md",
   "homepage": "https://github.com/shuttlenetwork/shuttle",
   "dependencies": {
-    "@titaniumnetwork-dev/ultraviolet": "^1.0.5",
-    "@tomphttp/bare-server-node": "^1.2.2",
     "express": "^4.18.1",
     "forever": "^4.0.3"
   },
