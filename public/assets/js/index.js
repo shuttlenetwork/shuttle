@@ -56,8 +56,6 @@ window.onload = () => {
 var curzr = `<div class="curzr" hidden></div>`
 document.body.insertAdjacentHTML("beforeend", curzr)
 
-
-
 class GlitchEffect {
   constructor() {
     this.root = document.body
@@ -126,6 +124,17 @@ class GlitchEffect {
       this.hoverout()
     }
 
+    if (
+      this.pointerX < 0 ||
+      this.pointerY < 0 ||
+      this.pointerX >= window.innerWidth ||
+      this.pointerY >= window.innerHeight
+    ) {
+      this.cursor.style.display = "none";
+    } else {
+      this.cursor.style.display = "flex";
+    }
+
     this.cursor.style.transform = `translate3d(${this.pointerX}px, ${this.pointerY}px, 0)`
     this.cursor.style.boxShadow = `
       ${+this.distanceX}px ${+this.distanceY}px 0 ${this.glitchColorB}, 
@@ -170,8 +179,19 @@ class GlitchEffect {
     document.onclick = function () {
       cursor.click()
     }
+    document.addEventListener("mouseleave", function(event) {
+      if (
+        event.clientY <= 0 ||
+        event.clientX <= 0 ||
+        (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight)
+      ) {
+        cursor.cursor.style.display = "none";
+      } else {
+        cursor.cursor.style.display = "flex";
+      }
+    });
   } else {
-    cursor.remove()
+    cursor.remove();
   }
 })()
 
