@@ -6,39 +6,38 @@
     
     <!-- Loading Animation -->
     <style>
-body {
-  position: relative;
-}
+      body {
+        position: relative;
+      }
 
-.loader-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #000;
-  z-index: 9999;
-  transition: opacity .3s ease-out;
-}
+      .loader-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        z-index: 9999;
+        transition: opacity .3s ease-out;
+      }
 
-.loader {
-  width: 100px;
-  height: 100px;
-  border-radius: 50px;
-  filter: blur(1px);
-  box-shadow: 0px -5px 20px 0px rgb(162, 0, 255), 0px 5px 20px 0px rgb(181, 149, 207);
-  animation: spinning82341 1.2s linear infinite;
-}
+      .loader {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        filter: blur(1px);
+        box-shadow: 0px -5px 20px 0px rgb(162, 0, 255), 0px 5px 20px 0px rgb(181, 149, 207);
+        animation: spinning82341 1.2s linear infinite;
+      }
 
-@keyframes spinning82341 {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
+      @keyframes spinning82341 {
+        to {
+          transform: rotate(360deg);
+        }
+      }
     </style>
     <!-- Loading Animation End -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5707085206376219" crossorigin="anonymous"></script>
@@ -75,12 +74,6 @@ body {
     <div class="loader-container">
       <div class="loader"></div>
     </div>
-    <script>
-      if (localStorage.getItem("visited") === null) {
-        alert("Hello! This website is available at no cost to you, however, it requires alot of money to keep the servers running, which can be expensive. If you have an ad blocker, we would appreciate it if you could disable it to help us maintain the website. Your support means a lot to us.  <3 ");
-          localStorage.setItem("visited", true);
-        }
-    </script>
     <script src="assets/js/cookie.js"></script>
     <p hidden>hey shuttle user using inspect element! join our discord now at discord.gg/xi</p>
     <div id="align">
@@ -96,31 +89,19 @@ body {
       <iframe id="ifr"></iframe>
     </div>
     <!-- Navbar start -->
-    <div class="sidebar" style="margin-bottom:10px;">
-      <a href="/" style="background-color: #202020;height:45px;color:black;">
-        <span class="fa-stack fa-sm" style="display:flex;margin-bottom:50%">
+    <div class="sidebar">
+      <a href="/" id="logo">
+        <span class="fa-stack fa-sm">
           <i class="fa fa-circle fa-stack-2x"></i>
           <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
         </span>
       </a>
-      <a href="/" class="active" style="font-family:'Poppins';">
-        <span>Home</span>
-      </a>
-      <a href="/games" style="font-family:'Poppins';">
-        <span>Games</span>
-      </a>
-      <a href="/apps" style="font-family:'Poppins';">
-        <span>Apps</span>
-      </a>
-      <a href="/chat" style="font-family:'Poppins';">
-        <span>Chat</span>
-      </a>
-      <a href="/discord" style="font-family:'Poppins';">
-        <span>Discord</span>
-      </a>
-      <a href="/settings" style="font-family:'Poppins';">
-        <span>Settings</span>
-      </a>
+      <a href="/" class="active"><span>Home</span></a>
+      <a href="/games"><span>Games</span></a>
+      <a href="/apps"><span>Apps</span></a>
+      <a href="/chat"><span>Chat</span></a>
+      <a href="/discord"><span>Discord</span></a>
+      <a href="/settings"><span>Settings</span></a>
     </div>
     <!-- Navbar end -->
     <script type="text/javascript">
@@ -146,7 +127,7 @@ body {
           <i class="fas fa-search searchicon"></i>
         </button>
       </form>
-      <iframe src="/ultraviolet/hvtrs8%2F-hwb%2Canignju%60.zyx%2Fqhmw%3Duvm%5Dmgdkuo%3Dqhwtvlg" width="450" height="150" frameborder="0" scrolling="no" style="margin-top:30px"></iframe>\
+      <iframe src="/ultraviolet/hvtrs8%2F-hwb%2Canignju%60.zyx%2Fqhmw%3Duvm%5Dmgdkuo%3Dqhwtvlg" width="450" height="150" frameborder="0" scrolling="no" style="margin-top:30px"></iframe>
       <script type="text/javascript">
         atOptions = {
           'key' : 'e16b08420c2c1a771ef676212f5ac3a6',
@@ -160,7 +141,7 @@ body {
 
       <footer>
         <a title="discord" href="https://discord.gg/xi">Discord</a>
-           <a title="github" href="https://github.com/shuttlenetwork/shuttle">Github</a>
+        <a title="github" href="https://github.com/shuttlenetwork/shuttle">Github</a>
       </footer>
     </div>
     <script src="/uv/uv.bundle.js"></script>
