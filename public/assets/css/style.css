@@ -3,7 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap");
 :root{
   --bg: #19191a;
-  --font: 'Montserrat', sans-serif;
+  --font: "Montserrat", sans-serif;
   --color-1: #3a027e;
   --color-2: #c800ff;
   --border-card: rgba(49, 49, 49, 1);
@@ -112,7 +112,6 @@ footer a:hover {
   text-align: center;
   animation: float 6s ease-out infinite;
 }
-
 .nav-logo {
   width: 100px;
   height: 100px;
@@ -173,6 +172,7 @@ body {
   width: 100%;
   height: 50px;
   background-color: #202020;
+  margin-bottom: 10px;
 }
 .sidebar a {
   color: #fff;
@@ -260,11 +260,6 @@ label #cancel {
   flex-direction: column;
 }
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
 .button-1:hover,
 .button-1:focus {
   background-color: rgba(0, 0, 0, 0);
@@ -279,11 +274,13 @@ body {
   cursor: pointer;
   margin-bottom: 5px;
   height: 40px;
+  transition: transform 0.3s ease;
 }
 .button:hover,
 .button:focus {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0);
+  transform: scale(1.1);
 }
 
 .settings-head {
@@ -308,13 +305,14 @@ body {
   border-radius: 5px;
   border: none;
   border-color: #ffffff;
-    border-style: solid;
+  border-style: solid;
 }
 option {
   font-family: "Poppins";
   border-radius: 5px;
+  background-color: #000;
+  color: #fff;
 }
-
 .box {
   width: 400px;
   height: 100px;
@@ -366,7 +364,6 @@ option {
   font-family: "Montserrat", sans-serif;
   color: white;
 }
-
 .gs-box-button:hover {
   color: black;
 }
@@ -411,11 +408,9 @@ body {
   width: 100%;
   height: 100%;
 }
-
 ul {
   list-style: none; /* Remove default bullets */
 }
-
 ul li::before {
   content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
   color: white; /* Change the color */
@@ -434,4 +429,28 @@ ul li::before {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
+a {
+  font-family:"Poppins";
+}
+#starsContainer {
+  width: 100%;
+}
+#404 {
+  color: #824dff;
+  font-size: 24px;
+  font-family: "Poppins";
+}
+#logo {
+  background-color: #202020;
+  height: 45px;
+  color: black;
+}
+#logo span {
+  display: flex;
+  margin-bottom: 50%;
+}
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
