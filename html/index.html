@@ -3,7 +3,7 @@
   <head>
     <!-- It is disrespectful to the developers who put in effort to code the shuttle
     if any ad tag or scripts are removed. Therefore, it is advised not to remove them. -->
-    
+
     <!-- Loading Animation -->
     <style>
       body {
@@ -21,21 +21,56 @@
         align-items: center;
         background-color: #000;
         z-index: 9999;
-        transition: opacity .3s ease-out;
+        transition: opacity 0.3s ease-out;
       }
 
-      .loader {
-        width: 100px;
-        height: 100px;
-        border-radius: 50px;
-        filter: blur(1px);
-        box-shadow: 0px -5px 20px 0px rgb(162, 0, 255), 0px 5px 20px 0px rgb(181, 149, 207);
-        animation: spinning82341 1.2s linear infinite;
+      .lds-ripple {
+        display: inline-block;
+        position: relative;
+        width: 80px;
+        height: 80px;
       }
 
-      @keyframes spinning82341 {
-        to {
-          transform: rotate(360deg);
+      .lds-ripple div {
+        position: absolute;
+        border: 4px solid #fff;
+        opacity: 1;
+        border-radius: 50%;
+        animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+      }
+
+      .lds-ripple div:nth-child(2) {
+        animation-delay: -0.5s;
+      }
+
+      @keyframes lds-ripple {
+        0% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 0;
+        }
+        4.9% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 0;
+        }
+        5% {
+          top: 36px;
+          left: 36px;
+          width: 0;
+          height: 0;
+          opacity: 1;
+        }
+        100% {
+          top: 0px;
+          left: 0px;
+          width: 72px;
+          height: 72px;
+          opacity: 0;
         }
       }
     </style>
@@ -72,7 +107,10 @@
   </head>
   <body id="body">
     <div class="loader-container">
-      <div class="loader"></div>
+      <div class="lds-ripple">
+        <div></div>
+        <div></div>
+      </div>
     </div>
     <script src="assets/js/cookie.js"></script>
     <p hidden>hey shuttle user using inspect element! join our discord now at discord.gg/xi</p>
@@ -118,7 +156,7 @@
       <div class="header-container">
         <div class="big-text">
           <h1>Shuttle</h1>
-          </div>
+        </div>
         <h2 style="color:white;"><span id="splash"></span></h2>
       </div>
       <form id="form">
