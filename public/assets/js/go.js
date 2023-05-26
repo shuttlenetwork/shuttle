@@ -1,4 +1,4 @@
-const search = document.getElementById('search')
+const search = document.getElementById("search")
 
 document.getElementById("form").addEventListener("submit", function(e) {
   e.preventDefault()
@@ -6,19 +6,19 @@ document.getElementById("form").addEventListener("submit", function(e) {
 });
 function uv(url) {
   window.location.hash = btoa(url)
-  document.getElementById('align').style.display = 'flex';
-  document.getElementsByClassName('sidebar').display = 'none';
+  document.getElementById("align").style.display = "flex";
+  document.getElementsByClassName("sidebar").display = "none";
   proxy()
 }
 function searchurl(url) {
   switch (localStorage.getItem("search")) {
-    case 'DuckDuckGo':
+    case "DuckDuckGo":
       uv(`https://duckduckgo.com/?q=${url}`)
       break;
-    case 'Brave':
+    case "Brave":
       uv(`https://search.brave.com/search?q=${url}`)
       break;
-    case 'Google':
+    case "Google":
       uv(`https://www.google.com/search?q=${url}`)
       break;
     default:
@@ -31,11 +31,11 @@ function pxy(url) {
   if (!isUrl(url)) {
     searchurl(url)
   } else {
-    if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'http://' + url
+    if (!(url.startsWith("https://") || url.startsWith("http://"))) url = "http://" + url
     uv(url)
   }
 }
-function isUrl(val = '') {
-  if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
+function isUrl(val = "") {
+  if (/^http(s?):\/\//.test(val) || val.includes(".") && val.substr(0, 1) !== " ") return true;
   return false;
 }

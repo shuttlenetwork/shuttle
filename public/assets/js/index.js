@@ -149,7 +149,7 @@ class GlitchEffect {
   }
 
   click() {
-    this.cursor.style.transform += ` scale(0.75)`
+    this.cursor.style.transform += `scale(0.75)`
     setTimeout(() => {
       this.cursor.style.transform = this.cursor.style.transform.replace(` scale(0.75)`, "")
     }, 35)
@@ -174,20 +174,24 @@ class GlitchEffect {
   const cursor = new GlitchEffect()
   if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
     document.onmousemove = function (event) {
-      cursor.move(event)
+        cursor.move(event);
     }
     document.onclick = function () {
-      cursor.click()
+      cursor.click();
     }
     document.addEventListener("mouseleave", function(event) {
-      if (
-        event.clientY <= 0 ||
-        event.clientX <= 0 ||
-        (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight)
-      ) {
+      if (event.clientY <= 0 || event.clientX <= 0 || (event.clientX >= window.innerWidth || event.clientY >= window.innerHeight)) {
         cursor.cursor.style.display = "none";
       } else {
         cursor.cursor.style.display = "flex";
+      }
+    });
+    document.addEventListener("mouseover", (event) => {
+      const targetElement = event.target;
+      const isCursorOverDisappearElement = targetElement.classList.contains("disappear");
+    
+      if (isCursorOverDisappearElement) {
+        cursor.cursor.style.display = "none";
       }
     });
   } else {
