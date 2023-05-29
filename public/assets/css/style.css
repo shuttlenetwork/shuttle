@@ -135,8 +135,7 @@ body {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  /*background-image: linear-gradient(to right, #4B0082, #4B0082);*/
-  background-color: #000000;
+  background-image: linear-gradient(to bottom, #251630, #000000 25%);
   margin: 0px;
   padding: 0px;
 }
@@ -170,22 +169,22 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 80px;
   background-color: #202020;
   margin-bottom: 10px;
 }
 .sidebar a {
   color: #fff;
-  padding: 10px;
+  padding: 13px;
   text-decoration: none;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
   transition: all 0.5s ease;
 }
 .sidebar a.active {
-  color: #000000;
-  background: #f3f3f3;
-  border-radius:20px;
+  color: #ffffff;
+  background: #a772ff;
+  border-radius:10px;
 }
 .sidebar a span {
   letter-spacing: 1px;
@@ -249,7 +248,12 @@ label #cancel {
   --accent-color: #555555;
   --gradient-color: #222222;
 }
-
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .frame {
   width: 50%;
   height: 30%;
@@ -444,13 +448,33 @@ a {
   background-color: #202020;
   height: 45px;
   color: black;
+  margin-bottom: 15px
 }
 #logo span {
   display: flex;
-  margin-bottom: 50%;
 }
 iframe {
   width: 100%;
   height: 100%;
   border: none;
 }
+.ad-container {
+  display: inline-block;
+  margin-bottom: -50px;
+  width: 728px;
+}
+    .ah {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        width: 450px;
+        height: 150px;
+    }
+
+    .ah iframe {
+        width: 450px;
+        height: 150px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
