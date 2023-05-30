@@ -188,7 +188,7 @@ class GlitchEffect {
     });
     document.addEventListener("mouseover", (event) => {
       const targetElement = event.target;
-      const isCursorOverDisappearElement = targetElement.classList.contains("disappear");
+      const isCursorOverDisappearElement = targetElement.tagName.toLowerCase() === "iframe";
     
       if (isCursorOverDisappearElement) {
         cursor.cursor.style.display = "none";
