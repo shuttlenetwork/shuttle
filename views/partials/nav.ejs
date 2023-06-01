@@ -8,6 +8,22 @@
     <a href="/apps"><span>Apps</span></a>
     <a href="/chat"><span>Chat</span></a>
     <a href="/discord"><span>Discord</span></a>
-    <a href="/settings" class="active"><span>Settings</span></a>
+    <a href="/settings"><span>Settings</span></a>
 </div>
+<script>
+  let path = window.location.pathname
+  if (path == "/games") {
+    document.getElementById("games-nav").className = "active"
+  } else if (path == "/apps") {
+    document.getElementById("games-nav").className = "active"
+  } else if (path == "/games") {
+    document.getElementById("games-nav").className = "active"
+  } else if (path == "/chat") {
+    document.getElementById("chat-nav").className = "active"
+  } else if (path == "/discord") {
+    document.getElementById("discord-nav").className = "active"
+  } else if (path == "/settings") {
+    document.getElementById("settings-nav").className = "active"
+  } 
+</script>
 <!-- Navbar end -->
