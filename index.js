@@ -15,27 +15,34 @@ async function main() {
   const cacheOptions = { maxAge: 86400000 }; 
   app.use(express.static('./public', cacheOptions));
 
+  // Set view engine to ejs
+  app.set('view engine', 'ejs')
+  
+  // Set up caching for static files
+  const cacheOptions = { maxAge: 86400000 }; // Cache static files for 1 day (in milliseconds)
+  app.use(express.static('./public', cacheOptions));
+
   // Use route handling middleware for Express
   app.use((req, res, next) => {
     const routes = {
-      '/': 'index.html',
-      '/games': 'games.html',
-      '/settings': 'settings.html',
-      '/apps': 'apps.html',
-      '/discord': 'discord.html',
-      '/chat': 'chat.html'
+      '/': 'index',
+      '/games': 'games',
+      '/settings': 'settings',
+      '/apps': 'apps',
+      '/discord': 'discord',
+      '/chat': 'chat'
     };
     const filename = routes[req.path];
 
     if (filename) {
-      res.sendFile(filename, { root: './html' });
+      res.render(filename);
     } else {
       next();
     }
   });
 
   app.use((req, res) => {
-    res.status(404).sendFile('404.html', { root: './html' });
+    res.status(404).render('404');
   });
 
   const httpServer = http.createServer();
