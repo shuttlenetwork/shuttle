@@ -11,10 +11,6 @@ async function main() {
 
   const app = express();
 
-  // caching for static files
-  const cacheOptions = { maxAge: 86400000 }; 
-  app.use(express.static('./public', cacheOptions));
-
   // Set view engine to ejs
   app.set('view engine', 'ejs')
   
