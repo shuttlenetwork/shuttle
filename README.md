@@ -26,7 +26,7 @@ You are welcome to submit pull requests aimed at enhancing shuttle.
 
 Press the join button to join our server:
 
-[![Join us on Discord](https://discord.gg/xi)](https://discord.gg/xi)
+[![Join us on Discord](6BE8DA18-1A09-4EE2-B6CC-9CC3ADF407C3.jpeg)](https://discord.gg/xi)
 
 ## Setup
 
