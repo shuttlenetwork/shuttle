@@ -26,7 +26,7 @@ You are welcome to submit pull requests aimed at enhancing shuttle.
 
 Press the join button to join our server:
 
-[![Join us on Discord](https://invidget.switchblade.xyz/xi?theme=dark)](https://discord.gg/xi)
+[![Join us on Discord](IMG_0007.jpeg)](https://discord.gg/xi)
 
 ## Setup
 
