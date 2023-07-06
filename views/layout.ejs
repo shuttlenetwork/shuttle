@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+	<meta property="og:title" content="shuttle" />
+	<meta property="og:description" content="shuttle, the fastest proxy" />
+	<meta property="og:image" content="/shuttle.png" />
+	<meta name="theme-color" content="#000000" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="language" content="English" />
+
+	<title>Shuttle</title>
+
+	<link rel="stylesheet" href="/assets/css/style.css" />
+
+	<script src="https://kit.fontawesome.com/be27c0ad9d.js" crossorigin="anonymous"></script>
+	<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+	<script src="/uv/uv.bundle.js"></script>
+	<script src="/uv/uv.config.js"></script>
+
+	<script src="/assets/js/index.js" defer></script>
+	<script src="/assets/js/particles.js" defer></script>
+	<script src="/assets/js/cursor.js" defer></script>
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-QDSZE0VTXD"></script>
+	<script>
+    	window.dataLayer = window.dataLayer || [];
+    	function gtag() { dataLayer.push(arguments); }
+    	gtag("js", new Date());
+    	gtag("config", "G-QDSZE0VTXD");
+	</script>
+
+	<script type="text/javascript" src="//aptdiary.com/c6/8d/ac/c68dac6e6f3b965f772e2057fa50f0b4.js" defer></script>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5707085206376219" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="sidebar">
+		<a href="/" id="logo">
+			<img src="shuttle.png" alt="Logo">
+		</a>
+<%- navItems.map(([to, name]) => `<a href="${to}"${to === path ? " class=\"active\"" : ""}><span>${name}</span></a>`).join("\n"); %>
+	</div>
+	<%- include(page); %>
+	<div id="starsContainer">
+		<div id="stars"></div>
+		<div id="stars2"></div>
+		<div id="stars3"></div>
+	</div>
+	<div class="background"></div>
+</body>
+</html>
