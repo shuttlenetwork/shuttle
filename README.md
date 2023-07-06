@@ -21,6 +21,8 @@ You are welcome to submit pull requests aimed at enhancing shuttle.
 - [x] cleaner code
 - [x] cleaner view
 - [ ] themes (TODO)
+- [ ] Rename chatgpt to ShuttleAi
+- [ ] Remove "chat" box
 
 ## Discord Server
 
