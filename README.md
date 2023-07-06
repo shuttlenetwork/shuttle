@@ -20,10 +20,11 @@ You are welcome to submit pull requests aimed at enhancing shuttle.
 - [x] more apps
 - [x] cleaner code
 - [x] cleaner view
-- [ ] themes (TODO)
+- [ ] themes (similar to 3kh0 theme slider)
 - [ ] Rename chatgpt to ShuttleAi
 - [ ] Remove "chat" box
 - [ ] remove disable ad blocker text
+- [ ] fix iframe bug
 
 ## Discord Server
 
