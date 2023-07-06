@@ -23,6 +23,7 @@ You are welcome to submit pull requests aimed at enhancing shuttle.
 - [ ] themes (TODO)
 - [ ] Rename chatgpt to ShuttleAi
 - [ ] Remove "chat" box
+- [ ] remove disable ad blocker text
 
 ## Discord Server
 
