@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 .classic {
     background: #111;
     color: white;
@@ -27,7 +27,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
 }
 .input {
     width: 150px;
@@ -37,10 +37,10 @@
     border-radius: 10px;
     border-style: solid;
     border-width: 2px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 .input ::placeholder {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     color: white;
 }
 .btn {

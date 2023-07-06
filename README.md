@@ -20,22 +20,25 @@ You are welcome to submit pull requests aimed at enhancing shuttle.
 - [x] more apps
 - [x] cleaner code
 - [x] cleaner view
-- [ ] 50 stars for themes
+- [ ] themes (TODO)
 
 ## Discord Server
 
 Press the join button to join our server:
 
-[![Join us on Discord](https://invidget.switchblade.xyz/xi?theme=dark)](https://discord.gg/xi)
+[![Join us on Discord](https://invidget.switchblade.xyz/xi)](https://discord.gg/xi)
 
 ## Setup
 
 ```sh
-git clone https://github.com/shuttlenetwork/shuttle
+git clone https://github.com/shuttlenetwork/shuttle.git
 cd shuttle
 npm install
-node .
+npm start
 ```
 ## Info 
-We do not recommended using replit
-It is not our fault if you upload Shuttle to another service and your account gets banned! Proxies use a lot of bandwidth and are not generally allowed on free hosting platforms.
+We do not recommended using Replit.
+
+It is not our fault if you upload Shuttle to another service and your account gets banned!
+
+Proxies use a lot of bandwidth and are not generally allowed on free hosting platforms.

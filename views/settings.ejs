@@ -1,38 +1,17 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <%- include('./partials/common-head') %>
-  <script src="/assets/js/settings.js"></script>
-</head>
-
-<body>
-  <%- include('./partials/stars'); %>
-  <%- include('./partials/nav'); %>
-  <div class="alignment-container-1">
-    <%- include('./partials/ads'); %>
-    <h1 class="settings-head">Settings</h1>
-    <h2 class="settings-head2">about:blank cloaking</h2>
-    <button class="button" id="ab">Go about:blank</button>
-    <h2 class="settings-head2">Title</h2>
-    <input type="text" class="settingsInput button"
-      onchange="document.title = this.value; localStorage.setItem('title', this.value)"
-      placeholder="Change Title" />
-    <input type="text" class="settingsInput button"
-      onchange="changeFavicon(this.value); localStorage.setItem('favicon', this.value)"
-      placeholder="Change Favicon (URL)" />
-    <br />
-    <h2 class="settings-head2">Browser</h2>
-    <select class="browsers" id="browsers" onchange="changeSearch(this)">
-      <option>Google</option>
-      <option>DuckDuckGo</option>
-      <option>Brave</option>
-    </select>
-  </div>
-  <%- include('./partials/uv'); %>
-  <script src="/assets/js/abc.js"></script>
-  <script type="text/javascript" src="//aptdiary.com/c6/8d/ac/c68dac6e6f3b965f772e2057fa50f0b4.js"></script>
-  <div class="background"></div>
-</body>
-
-</html>
+<div class="alignment-container-1">
+	<%- include("ad"); %>
+		<h1 class="settings-head">Settings</h1>
+		<h2 class="settings-head2">about:blank cloaking</h2>
+		<button class="button" onclick="abc()">Go about:blank</button>
+		<h2 class="settings-head2">Title</h2>
+		<input type="text" class="settingsInput button" onchange="changeTitle(this.value)" placeholder="Change Title" />
+		<input type="text" class="settingsInput button" onchange="changeFavicon(this.value)" placeholder="Change Favicon (URL)" />
+		<br />
+		<h2 class="settings-head2">Search Engine</h2>
+		<select class="browsers" id="browsers" onchange="changeSearch(this)">
+			<option>Google</option>
+			<option>DuckDuckGo</option>
+			<option>Brave</option>
+		</select>
+</div>
+<script src="/assets/js/settings.js"></script>

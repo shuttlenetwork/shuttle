@@ -12,7 +12,7 @@
     "NODE_ENV": "production"
   },
   "scripts": {
-    "start": "node ."
+    "start": "npm start"
   },
   "formation": {
     "web": {

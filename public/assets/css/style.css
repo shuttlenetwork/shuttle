@@ -465,18 +465,25 @@ iframe {
   margin-bottom: -50px;
   width: 728px;
 }
-    .ah {
-        display: flex;
-        justify-content: center;
-        margin-top: 30px;
-        width: 450px;
-        height: 150px;
-    }
+.ah {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    width: 450px;
+    height: 150px;
+}
 
-    .ah iframe {
-        width: 450px;
-        height: 150px;
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-    }
+.ah iframe {
+    width: 450px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#splash {
+	color: rgba(180, 180, 180, 0.5);
+	font-family: "Poppins";
+	margin-bottom: 30px;
+	text-align: center;
+}
