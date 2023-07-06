@@ -10,13 +10,13 @@ const routes = {
 	"/settings": "settings",
 	"/apps": "apps",
 	"/chat": "chat",
-	"/chatgpt": "chatgpt"
+	"/shuttleai": "shuttleai"
 };
 
 const navItems = [
 	["/", "Home"],
 	["/games", "Games"],
-	["/chatgpt", "ChatGPT"],
+	["/shuttleai", "ShuttleAI"],
 	["/chat", "Chat"],
 	["/settings", "Settings"]
 ];
