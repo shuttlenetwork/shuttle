@@ -10,22 +10,6 @@
 [![Deploy to Amplify Console](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/amplifyconsole.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/shuttlenetwork/shuttle)
 [![Run on Google Cloud](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/googlecloud.svg)](https://deploy.cloud.run/?git_repo=https://github.com/shuttlenetwork/shuttle)
 
-## To Do 
-You are welcome to submit pull requests aimed at enhancing shuttle.
-- [x] games
-- [x] particals
-- [x] custom cursor
-- [x] apps 
-- [x] more games
-- [x] more apps
-- [x] cleaner code
-- [x] cleaner view
-- [ ] themes (similar to 3kh0 theme slider)
-- [ ] Rename chatgpt to ShuttleAi
-- [ ] Remove "chat" box
-- [ ] remove disable ad blocker text
-- [ ] fix iframe bug
-
 ## Discord Server
 
 Press the join button to join our server:

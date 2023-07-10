@@ -20,12 +20,11 @@ const splash = [
 	"try shittle toilet services"
 ];
 
+// Only display the loading animation if it is needed
 window.addEventListener("load", () => {
 	const loaderContainer = document.querySelector(".loader-container");
-	setTimeout(() => {
-	  loaderContainer.style.opacity = "0";
-	  setTimeout(() => loaderContainer.style.display = "none", 500);
-	}, 500);
+	loaderContainer.style.opacity = "0";
+	setTimeout(() => loaderContainer.style.display = "none", 500);
 	document.querySelector("#splash").innerHTML = splash[Math.floor(Math.random() * (splash.length))];
   });
 
@@ -67,7 +66,7 @@ function isUrl(val = "") {
 
 function proxy(url) {
 	document.getElementById("align").style.display = "flex";
-	document.getElementsByClassName("sidebar").display = "none";
+	document.querySelector(".sidebar").style.display = "none";
 	registerSW().then(worker => {
 		if(!worker) {
 			return msg.innerHTML = "Error: Your browser does not support service workers or is blocking them (private browsing mode?), try using a different browser";
@@ -83,6 +82,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function exit() {
 	document.getElementById("align").style.display = "none";
-	document.getElementsByClassName("sidebar").display = "flex";
+	document.querySelector(".sidebar").style.display = "";
 	frame.src = "";
 }

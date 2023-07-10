@@ -1,13 +1,3 @@
-if(!localStorage.getItem("visited")) {
-	alert(`Hello! This website is available at no cost to you, however,
-it requires alot of money to keep the servers running, which can be expensive.
-If you have an ad blocker, we would appreciate it if you could disable it to help us maintain the website.
-Your support means a lot to us.  <3`);
-	localStorage.setItem("visited", true);
-}
-
-registerSW();
-
 function fullscreen() {
 	var elem = document.getElementById("ifr")
 	if (elem.requestFullscreen) {
@@ -27,6 +17,8 @@ async function registerSW() {
 	return navigator.serviceWorker.register(workerURL, { scope: __uv$config.prefix });
 }
 
+registerSW();
+
 function setFavicon(f) {
 	var link = document.querySelector("link[rel~='icon']");
 	if (!link) {
@@ -35,6 +27,10 @@ function setFavicon(f) {
 		document.head.appendChild(link);
 	}
 	link.href = f;
+}
+
+function encodeUVUrlWithPath(url = "") {
+	return __uv$config.prefix + __uv$config.encodeUrl(url);
 }
 
 window.addEventListener("load", () => {
