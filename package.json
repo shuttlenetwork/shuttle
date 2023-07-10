@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shuttlenetwork/shuttle"
+    "url": "git+https://github.com/shuttlenetwork/shuttle.git"
   },
   "keywords": [
     "proxy"
@@ -18,7 +18,7 @@
   "homepage": "https://shuttleproxy.com",
   "dependencies": {
     "@titaniumnetwork-dev/ultraviolet": "^2.0.0",
-    "@tomphttp/bare-server-node": "^2.0.0",
+    "@tomphttp/bare-server-node": "^2.0.1",
     "ejs": "^3.1.9",
     "express": "^4.18.1",
     "ms": "^2.1.3"
