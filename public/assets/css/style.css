@@ -62,6 +62,7 @@ footer a:hover {
   background-color: #1c1c1c;
   padding-right: 10px;
   color: #616161;
+  z-index: 1;
 }
 .background {
   z-index:0;
@@ -170,8 +171,9 @@ body {
   align-items: center;
   width: 100%;
   height: 80px;
-  background-color: #202020;
+  background-color: rgba(32, 32, 32, 0.5);
   margin-bottom: 10px;
+  z-index: 1;
 }
 .sidebar a {
   color: #fff;
@@ -180,15 +182,18 @@ body {
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
   transition: all 0.5s ease;
+  z-index: 1;
 }
 .sidebar a.active {
   color: #ffffff;
   background: #a772ff;
   border-radius:10px;
+  z-index: 1;
 }
 .sidebar a span {
   letter-spacing: 1px;
   text-transform: uppercase;
+  z-index: 1;
 }
 #check {
   display: none;
@@ -242,11 +247,13 @@ label #cancel {
 .sidebar > a:hover:nth-child(even) {
   --accent-color: #555555;
   --gradient-color: #222222;
+  z-index: 1;
 }
 .sidebar a.active,
 .sidebar > a:hover:nth-child(odd) {
   --accent-color: #555555;
   --gradient-color: #222222;
+  z-index: 1;
 }
 .container {
   display: flex;
@@ -432,6 +439,7 @@ ul li::before {
   font-family: "Poppins";
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  z-index: 1;
 }
 a {
   font-family:"Poppins";
@@ -445,7 +453,6 @@ a {
   font-family: "Poppins";
 }
 #logo {
-  background-color: #202020;
   height: 45px;
   color: black;
   margin-bottom: 15px
@@ -471,6 +478,7 @@ iframe {
     margin-top: 30px;
     width: 450px;
     height: 150px;
+    z-index: 1;
 }
 
 .ah iframe {
@@ -486,4 +494,25 @@ iframe {
 	font-family: "Poppins";
 	margin-bottom: 30px;
 	text-align: center;
+}
+.glow-line {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background-color: white;
+      animation: glow 2s infinite linear;
+}
+
+ @keyframes glow {
+      0% {
+      box-shadow: 0 0 5px white;
+      }
+      50% {
+      box-shadow: 0 0 20px white, 0 0 20px white, 0 0 20px white;
+      }
+      100% {
+      box-shadow: 0 0 5px white;
+      }
 }
