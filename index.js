@@ -1,22 +1,19 @@
 import { createBareServer } from "@tomphttp/bare-server-node";
-import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { createServer } from "node:http";
 import express from "express";
 import ms from "ms";
 
 const routes = {
 	"/": "index",
-	"/games": "games",
-	"/settings": "settings",
-	"/apps": "apps",
-	"/shuttleai": "shuttleai"
+	"/classes": "ShuttleAI",
+	"/math": "games",
+	"/settings": "settings"
 };
 
 const navItems = [
 	["/", "Home"],
-	["/games", "Games"],
-	["/apps", "Apps"],
-	["/shuttleai", "ShuttleAI"],
+	["/classes", "ShuttleAI (new)"],
+	["/math", "Games"],
 	["/settings", "Settings"]
 ];
 
@@ -26,7 +23,6 @@ const app = express();
 app.set("view engine", "ejs")
 
 app.use(express.static("./public", { maxAge: ms("1d") }));
-app.use("/uv/", express.static(uvPath));
 
 for (const [path, page] of Object.entries(routes)) {
 	app.get(path, (_, res) => res.render("layout", {
