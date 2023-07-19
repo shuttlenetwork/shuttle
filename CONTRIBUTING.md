@@ -6,7 +6,7 @@ Thank you for considering contributing to our project! To help ensure a producti
 
 3. Comment your code: To facilitate troubleshooting and fixes, please add comments to unclear sections of your code.
 
-4. Join our Discord: We primarily use Discord for communication and coordination. You can access the invite link in the ReadMe file.
+4. Join our Discord: We primarily use Discord for communication and coordination. You can access the invite link at discord.gg/xi.
 
 5. Address older issues: Tackling unresolved past issues can help establish good rapport with the team.
 
