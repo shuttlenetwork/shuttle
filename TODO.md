@@ -3,9 +3,8 @@ You are welcome to submit pull requests aimed at enhancing shuttle.
 - [x] Games
 - [x] Particals
 - [x] Custom cursor
-- [x] Apps 
+- [] Apps 
 - [x] More games
-- [x] More apps
 - [x] Cleaner code
 - [x] Cleaner view
 - [x] Rename chatgpt to ShuttleAi
