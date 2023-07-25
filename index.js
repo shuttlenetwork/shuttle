@@ -7,6 +7,7 @@ import express from "express";
 const routes = {
 	"/": "index",
 	"/classes": "shuttleai",
+	"/science": "shuttletv"
 	"/math": "games",
 	"/settings": "settings"
 };
@@ -14,6 +15,7 @@ const routes = {
 const navItems = [
 	["/", "Home"],
 	["/classes", "ShuttleAI (new)"],
+        ["/science", "ShuttleTV (new)"]
 	["/math", "Games"],
 	["/settings", "Settings"]
 ];
