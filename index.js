@@ -1,4 +1,4 @@
-import { createBareServer } from "@tomphttp/bare-server-node";
+import createBareServer from "@tomphttp/bare-server-node";
 import { createServer } from "node:http";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import express from "express";
@@ -7,7 +7,7 @@ import express from "express";
 const routes = {
 	"/": "index",
 	"/classes": "shuttleai",
-	"/science": "shuttletv"
+	"/science": "shuttletv",
 	"/math": "games",
 	"/settings": "settings"
 };
@@ -15,7 +15,7 @@ const routes = {
 const navItems = [
 	["/", "Home"],
 	["/classes", "ShuttleAI (new)"],
-        ["/science", "ShuttleTV (new)"]
+    ["/science", "ShuttleTV (new)"],
 	["/math", "Games"],
 	["/settings", "Settings"]
 ];
