@@ -6,7 +6,6 @@ import express from "express";
 // Request path to filename mappings
 const routes = {
 	"/": "index",
-	"/homework": "shuttleos",
 	"/classes": "shuttleai",
 	"/science": "shuttletv",
 	"/math": "games",
@@ -15,7 +14,6 @@ const routes = {
 
 const navItems = [
 	["/", "Home"],
-	["/homework", "ShuttleOS (NEW FREE ANDROID EMULATOR)"],
 	["/classes", "ShuttleAI"],
         ["/science", "ShuttleTV"],
 	["/math", "Games"],
