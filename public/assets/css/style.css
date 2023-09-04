@@ -58,9 +58,8 @@ footer a:hover {
   outline: none;
   font-size: 16px;
   padding: 8px;
-  height: 25px;
-  border: solid 1px white;
-  background-color: transparent;
+  height: 30px;
+  background-color: #1c1c1c;
   padding-right: 10px;
   color: #616161;
   z-index: 1;
@@ -98,7 +97,7 @@ footer a:hover {
   padding: 5px;
   width: 100%;
   height: 30px;
-  background-color: transparent;
+  background-color: inherit;
   color: #616161;
   border: none;
 }
