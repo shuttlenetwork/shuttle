@@ -1,0 +1,22 @@
+<!doctype html><html><head></head><body><!DOCTYPE html>
+<html>
+
+<body>
+	<button id="myButton" onclick="myFunction()" style="display: none;"></button>
+
+	<script>
+		document.addEventListener("keydown", function(event) {
+        if (event.keyCode === 13) {
+          event.preventDefault(); // Prevents form submission
+          document.getElementById("myButton").click();
+        }
+      });
+
+      function myFunction() {
+        var link = "https://wsd.instructure.com/courses";
+        window.open(link, "_blank");
+      }
+	</script>
+</body>
+
+</html></body><html>
