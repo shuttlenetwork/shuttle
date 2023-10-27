@@ -1,22 +1,25 @@
-import createBareServer from "@tomphttp/bare-server-node";
+import { createBareServer } from "@tomphttp/bare-server-node";
 import { createServer } from "node:http";
-import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import express from "express";
+import ms from "ms";
 
-// Request path to filename mappings
 const routes = {
 	"/": "index",
 	"/classes": "shuttleai",
 	"/science": "shuttletv",
 	"/math": "games",
+	"/physics": "apps",
+	"/history": "chat",
 	"/settings": "settings"
 };
 
 const navItems = [
 	["/", "Home"],
-	["/classes", "ShuttleAI"],
-        ["/science", "ShuttleTV"],
+	["/classes", "AI"],
+    ["/science", "TV"],
 	["/math", "Games"],
+	["/physics", "Apps"],
+	["/history", "Chat"],
 	["/settings", "Settings"]
 ];
 
@@ -25,8 +28,7 @@ const app = express();
 
 app.set("view engine", "ejs")
 
-app.use(express.static("./public"));
-app.use("/uv/", express.static(uvPath));
+app.use(express.static("./public", { maxAge: ms("1d") }));
 
 for (const [path, page] of Object.entries(routes)) {
 	app.get(path, (_, res) => res.render("layout", {

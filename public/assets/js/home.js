@@ -64,14 +64,14 @@ function isUrl(val = "") {
 	return false;
 }
 
-function proxy(url) {
+function proxy(url, dynamic = false) {
 	document.getElementById("align").style.display = "flex";
 	document.querySelector(".sidebar").style.display = "none";
 	registerSW().then(worker => {
 		if(!worker) {
 			return msg.innerHTML = "Error: Your browser does not support service workers or is blocking them (private browsing mode?), try using a different browser";
 		}
-		frame.src = __uv$config.prefix + __uv$config.encodeUrl(url);
+		frame.src = dynamic ? "/shuttle-dn/" + __uv$config.encodeUrl(url): __uv$config.prefix + __uv$config.encodeUrl(url);
 	});
 }
 
