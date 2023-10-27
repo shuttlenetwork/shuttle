@@ -1,5 +1,5 @@
 {
-  "name": "Shuttle Proxy",
+  "name": "Shuttle V3",
   "description": "A simple web proxy",
   "image": "heroku/nodejs",
   "addons": [],
