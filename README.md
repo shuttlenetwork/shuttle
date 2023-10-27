@@ -25,4 +25,4 @@ npm install
 npm start
 ```
 ## Info 
--If you are planning to run this site on replit or other hosting platform that bans proxies, please try [Shuttle Lite](https://github.com/shuttlenetwork/shuttle-lite)
+- If you are running this site on replit or other hosting platform that bans proxies, use [Shuttle Lite](https://github.com/shuttlenetwork/shuttle-lite)
