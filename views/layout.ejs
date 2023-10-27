@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
 	<meta property="og:title" content="shuttle" />
 	<meta property="og:description" content="shuttle, the fastest browser." />
@@ -8,7 +9,6 @@
 	<meta name="theme-color" content="#000000" />
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="English" />
-    <script src="/assets/js/snow.js"></script>
 
 	<title>Shuttle</title>
 
@@ -25,14 +25,69 @@
 
 	<%- include("ads-head") %>
 </head>
+
 <body>
-	<div class="sidebar">
+<div class="sidebar">
 		<a href="/" id="logo">
 			<img src="shuttle.png" alt="Logo">
 		</a>
-<%- navItems.map(([to, name]) => `<a href="${to}"${to === path ? " class=\"active\"" : ""}><span>${name}</span></a>`).join("\n"); %>
+		<a href="/" id="logo">
+		</a>
+<%- navItems.map(([to, name]) => `<a href="${to}" class="${to === path ? "nav-active" : "nav-btn"}"><span>${name}</span></a>`).join(" "); %>
+<a id="time" class="nav-btn" style="display: flex; justify-content: flex-end; margin-left: auto;"></a>
 	</div>
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
 	<%- include(page); %>
-	<div class="glow-line"></div>
+        <svg height="100%" width="100%" style="position: fixed; z-index: 0;"></svg>
+
 </body>
+
 </html>
+<script>
+function updateTime() {
+    var currentTime = new Date();
+
+    var year = currentTime.getFullYear();
+    var month = currentTime.getMonth() + 1; // Months are zero-based
+    var day = currentTime.getDate();
+
+    var hours = currentTime.getHours();
+    var minutes = currentTime.getMinutes();
+    var seconds = currentTime.getSeconds();
+
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+
+    hours = (hours % 12) || 12;
+
+    month = (month < 10 ? "0" : "") + month;
+    day = (day < 10 ? "0" : "") + day;
+    hours = (hours < 10 ? "0" : "") + hours;
+    minutes = (minutes < 10 ? "0" : "") + minutes;
+    seconds = (seconds < 10 ? "0" : "") + seconds;
+
+    document.getElementById("time").innerHTML = year + "/" + month + "/" + day + " " + hours + ":" + minutes + ":" + seconds + " " + ampm;
+}
+
+setInterval(updateTime, 1000);
+</script>
+<script>
+function initTheme() {
+  const savedTheme = localStorage.getItem("themehex");
+  if (savedTheme) {
+    document.body.style.backgroundColor = savedTheme;
+    document.querySelector('#colorPicker').value = savedTheme;
+  }
+}
+
+window.addEventListener('load', initTheme);
+
+window.onload = function() {
+        if (localStorage.getItem('fortniteMode') === 'activated') {
+            document.body.style.backgroundImage = "url('https://i.ytimg.com/vi/6evDWowLMbE/maxresdefault.jpg')";
+        }
+    }
+
+</script>
+<script type='text/javascript' src='//imaginaryspooky.com/45/34/f3/4534f3c01a4be5a6293543f3fb991ae0.js'></script>
+<script type='text/javascript' src='//imaginaryspooky.com/c6/8d/ac/c68dac6e6f3b965f772e2057fa50f0b4.js'></script>

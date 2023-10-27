@@ -15,26 +15,162 @@
 
 <div class="alignment-container-1" style="margin-top:15%;">
 	<div class="header-container">
-		<div class="big-text">
-			<h1>shuttle</h1>
-		</div>
+      <div class="logo-image">
+        <img src="logo.png" alt="Shuttle Logo" width="100%">
+      </div>
 		<!--- <h2 style="color:white;"><span id="splash"></span></h2> --->
 	</div>
 	<form id="form">
-		<input autofocus autocomplete="off" class="search" id="search" placeholder="URL Or Search" />
+		<input autofocus autocomplete="off" class="search" id="search" placeholder="URL Or Search" required/>
 		<button type="submit" class="submit-button">
 			<i class="fas fa-search searchicon"></i>
 		</button>
 	</form>
-	<div class="ah">
-		<iframe src="/shuttle/hvtrs8%2F-hwb%2Canignju%60.zyx%2Fqhmw%3Duvm%5Dmgdkuo%3Dqhwtvlg" frameborder="0" scrolling="no"></iframe>
+	<div id="suggestions"></div>
+	<div class="ah" class="alienhub-container">
+		<iframe src="/shuttle-uv/hvtrs8%2F-hwb%2Canignju%60.zyx%2Fqhmw%3Duvm%5Dmgdkuo%3Dqhwtvlg" frameborder="0" scrolling="no"></iframe>
 	</div>
-	<div style="margin-top: 50px">
+	<div style="margin-top: 50px; z-index: 1;">
 		<%- include("ad"); %>
 	</div>
+
+    
 	<footer>
 		<a title="discord" href="https://discord.gg/xi">Discord</a>
 		<a title="github" href="https://github.com/shuttlenetwork/shuttle">Github</a>
 	</footer>
 </div>
 <script src="/assets/js/home.js"></script>
+<script>
+const searchInput = document.getElementById('search');
+let debounceTimeout;
+let isRequestPending = false;
+
+function fetchResults(searchText) {
+    const url = `https://search.shuttle.rip/ac/?q=${encodeURIComponent(searchText)}`;
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            isRequestPending = false;
+            if (Array.isArray(data)) {
+                const suggestions = document.getElementById("suggestions");
+                suggestions.innerHTML = '';
+                data.forEach(result => {
+                    const suggestionItem = document.createElement('div');
+                    const suggestionLink = document.createElement('a');
+                    suggestionItem.classList=["suggestions"];
+
+                    suggestionLink.href = result.phrase;
+
+                    const displayedTitle = result.phrase.length > 23 ? result.phrase.slice(0, 23) + "..." : result.phrase;
+                    suggestionLink.textContent = displayedTitle;
+
+                    suggestionLink.addEventListener('click', function(event) {
+                        event.preventDefault();
+                        proxy(`https://www.google.com/search?&q=${result.phrase}`);
+                    });
+
+                    suggestionItem.appendChild(suggestionLink);
+                    suggestions.appendChild(suggestionItem);
+                });
+		
+            } else {
+                console.log('Error: Invalid response format');
+            }
+        })
+        .catch(error => {
+            isRequestPending = false;
+            console.error('Error:', error);
+        });
+}
+
+searchInput.addEventListener('input', function (event) {
+    clearTimeout(debounceTimeout); 
+    const searchText = event.target.value;
+
+    debounceTimeout = setTimeout(() => {
+        if (searchText.length >= 1) {
+            fetchResults(searchText)
+        }
+        if (searchText.length < 1) {
+
+            document.getElementById("suggestions").style.display = "none";
+        } else {
+            document.getElementById("suggestions").style.display = "block";
+        }
+    }, 100); 
+});
+</script>
+<script>
+const form = document.getElementById('form');
+
+searchInput.addEventListener('input', function (event) {
+    const searchText = event.target.value;
+
+    if (searchText.trim().length > 0) {
+        form.focus();
+    }
+});
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    var themecolor = localStorage.getItem("themehex");
+    
+    if (!/^#([0-9A-F]{3}){1,2}$/i.test(themecolor)) {
+        themecolor = "#0b0b0b"; 
+    }
+    
+    document.body.style.backgroundColor = themecolor;
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+  const hasVisitedBefore = localStorage.getItem('visitedBefore');
+
+  if (!hasVisitedBefore) {
+    alert('Join discord.gg/xi for more links + support');
+
+    localStorage.setItem('visitedBefore', 'true');
+  }
+});
+</script>
+<script>
+    let inFrame;
+  
+    try {
+      inFrame = window !== top;
+    } catch (e) {
+      inFrame = true;
+    }
+  
+    if (!inFrame && !navigator.userAgent.includes("Firefox")) {
+      const popup = open("about:blank", "_blank");
+      if (!popup || popup.closed) {
+        alert("Allow popups and redirects.");
+      } else {
+        const doc = popup.document;
+        const iframe = doc.createElement("iframe");
+        const style = iframe.style;
+        const link = doc.createElement("link");
+  
+        const name = localStorage.getItem("name") || "Sign in to your account";
+        const icon =
+          localStorage.getItem("icon") || "https://www.microsoft.com/favicon.ico";
+  
+        doc.title = name;
+        link.rel = "icon";
+        link.href = icon;
+  
+        iframe.src = location.href;
+        style.position = "fixed";
+        style.top = style.bottom = style.left = style.right = 0;
+        style.border = style.outline = "none";
+        style.width = style.height = "100%";
+  
+        doc.head.appendChild(link);
+        doc.body.appendChild(iframe);
+        location.replace("https://www.google.com/search?q=what+day+is+today");
+      }
+    }
+  </script>
