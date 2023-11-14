@@ -5,6 +5,7 @@ import ms from "ms";
 
 const routes = {
 	"/": "index",
+	"/ngg": "nowgg",
 	"/classes": "shuttleai",
 	"/science": "shuttletv",
 	"/math": "games",
@@ -15,6 +16,7 @@ const routes = {
 
 const navItems = [
 	["/", "Home"],
+	["/ngg", "NGG (NEW)"],
 	["/classes", "AI"],
     ["/science", "TV"],
 	["/math", "Games"],
