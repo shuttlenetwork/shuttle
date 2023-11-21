@@ -1,258 +1,74 @@
-<!DOCTYPE html>
-<html>
+<link href="/assets/css/games.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<div class="games-body">
+	<h1 style="margin-top: 40px; z-index: 5;">Apps</h1>
+	<formm id="formm">
+		<input type="search" autofocus="" autocomplete="off" class="search" id="search" placeholder="Search"
+			style="cursor: inherit;">
+	</formm>
+	<div class="games" id="gamesContainer">
+		<div class="game" data-href="https://chat.shuttleai.app/">
+			<img src="/shuttle.png" alt="ShuttleAI Icon">
+			<h2>ShuttleAI</h2>
+		</div>
+		<div class="game" data-href="https://tiktok.com/">
+			<img src="https://upload.wikimedia.org/wikipedia/my/thumb/1/1c/Tiktok_logo.svg/2048px-Tiktok_logo.svg.png"
+				alt="Tiktok Icon">
+			<h2>TikTok</h2>
+		</div>
 
-<head>
-  <title>Apps</title>
-  <style>
-body {
-  overflow: auto;
-  background-color: #0b0b0b;
-  color: #8151ff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: 'Poppins', sans-serif;
-}
+		<div class="game" data-href="https://discord.com/app">
+			<img src="https://play-lh.googleusercontent.com/0oO5sAneb9lJP6l8c6DH4aj6f85qNpplQVHmPmbbBxAukDnlO7DarDW0b-kEIHa8SQ"
+				alt="Discord icon">
+			<h2>Discord</h2>
+		</div>
+		<div class="game" data-href="https://youtube.com/">
+			<img src="https://skool.lol/img/yt.png" alt="Youtube icon">
+			<h2>Youtube</h2>
+		</div>
+		<div class="game" data-href="https://netflix.com/login">
+			<img src="https://skool.lol/img/ntfx.png" alt="Netflix icon">
+			<h2>Netflix</h2>
+		</div>
+		<div class="game" data-href="https://disneyplus.com/login">
+			<img src="https://skool.lol/img/dnp.png" alt="Disney+ icon">
+			<h2>Disney+</h2>
+		</div>
+		<div class="game" data-href="https://twitch.com/">
+			<img src="https://images.fastcompany.net/image/upload/w_596,c_limit,q_auto:best,f_auto/wp-cms/uploads/2019/09/3-twitch-is-rebranding-for-the-first-time.jpg"
+				alt="Twitch icon">
+			<h2>Twitch</h2>
+		</div>
+		<div class="game" data-href="https://web.snapchat.com/">
+			<img src="https://assets.dryicons.com/uploads/icon/svg/8361/f80c84be-cee0-4dd1-812b-5894b06a8db7.svg"
+				alt="Snapchat icon">
+			<h2>Snapchat</h2>
+		</div>
+		<div class="game" data-href="https://spotify.com/">
+			<img src="https://developer.spotify.com/images/guidelines/design/icon4@2x.png" alt="Spotify icon">
+			<h2>Spotify</h2>
+		</div>
+		<div class="game" data-href="https://www.instagram.com/">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/132px-Instagram_logo_2016.svg.png"
+				alt="Instagram icon">
+			<h2>Instagram</h2>
+		</div>
+		<div class="game" data-href="https://www.google.com/gmail/">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Gmail_Icon.png/768px-Gmail_Icon.png"
+				alt="Gmail icon">
+			<h2>Gmail</h2>
+		</div>
+		<div class="game" data-href="https://www.primevideo.com/">
+			<img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Amazon_Prime_Video_logo.svg"
+				alt="Prime Video icon">
+			<h2>Prime Video</h2>
+		</div>
+		<div class="game" data-href="https://www.soundcloud.com/">
+			<img src="https://play-lh.googleusercontent.com/6FoFUmywGeblaF0iUTWb4EdH2SvXeOU_bgXQFRGhHTRiMWVlG8sAVN-BqjlWUJh3GR3a"
+				alt="SoundCloud icon">
+			<h2>SoundCloud</h2>
+		</div>
 
-body::-webkit-scrollbar {
-  width: 0px;
-}
-
-body {
-  scrollbar-width: none;
-}
-
-body {
-  -ms-overflow-style: none;
-}
-
-    .games {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      max-width: 1200px;
-      width: 100%;
-      margin-top: 40px;
-    }
-
-    .game {
-      flex-basis: calc(25% - 20px);
-      margin: 10px;
-      padding: 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      background: rgba(35, 37, 36, 0.1);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      -moz-backdrop-filter: blur(8px);
-      -ms-backdrop-filter: blur(8px);
-      -webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.75);
-      -moz-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.75);
-      box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.75);
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      z-index: 4;
-    }
-
-    .game:hover {
-      transform: scale(1.05);
-    }
-
-    .game img {
-      display: block;
-      width: 200px;
-      height: 200px;
-      margin-bottom: 20px;
-      border-radius: 10px;
-      margin: auto;
-    }
-
-    .game h2 {
-      font-size: 1.8rem;
-      margin-top: 1;
-      margin-bottom: 10px;
-      text-align: center;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .game p {
-      display: none;
-    }
-
-    @media screen and (max-width: 1200px) {
-      .games {
-        max-width: 900px;
-      }
-
-      .game {
-        flex-basis: calc(33.33% - 20px);
-        margin: 10px 20px;
-      }
-    }
-
-    @media screen and (max-width: 900px) {
-      .games {
-        max-width: 600px;
-      }
-
-      .game {
-        flex-basis: calc(50% - 20px);
-        margin: 10px 20px;
-      }
-    }
-
-    @media screen and (max-width: 600px) {
-      .game {
-        flex-basis: calc(50% - 20px);
-        margin: 10px 20px;
-      }
-    }
-
-    @media screen and (max-width: 400px) {
-      .game {
-        flex-basis: calc(100% - 20px);
-        margin: 10px;
-      }
-    }
-
-    .search {
-      border-radius: 5px;
-      outline: none;
-      font-size: 16px;
-      padding: 5px;
-      width: 100%;
-      height: 30px;
-      background-color: inherit;
-      color: #616161;
-      border: none;
-      z-index: 5;
-    }
-
-    .search-bar input {
-      width: 100%;
-      padding: 5px 10px;
-      border-radius: 5px;
-      border: none;
-    }
-
-    #formm {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      border-radius: 30px;
-      outline: none;
-      font-size: 16px;
-      padding: 8px;
-      height: 30px;
-      background-color: #1c1c1c;
-      padding-right: 10px;
-      color: #616161;
-      width: 50%;
-      margin: 0 auto;
-      z-index: 5;
-    }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-
-<body>
-  <h1 style="margin-top: 40px; z-index: 5;">Apps</h1>
-  <formm id="formm">
-    <input type="search" autofocus="" autocomplete="off" class="search" id="search" placeholder="Search"
-      style="cursor: inherit;">
-  </formm>
-  <div class="games" id="gamesContainer">
-    <div class="game" data-href="https://tiktok.com/">
-      <img src="https://upload.wikimedia.org/wikipedia/my/thumb/1/1c/Tiktok_logo.svg/2048px-Tiktok_logo.svg.png"
-        alt="Tiktok Icon">
-      <h2>TikTok</h2>
-    </div>
-	
-    <div class="game" data-href="https://discord.com/app">
-      <img
-        src="https://play-lh.googleusercontent.com/0oO5sAneb9lJP6l8c6DH4aj6f85qNpplQVHmPmbbBxAukDnlO7DarDW0b-kEIHa8SQ"
-        alt="Discord icon">
-      <h2>Discord</h2>
-    </div>
-    <div class="game" data-href="https://youtube.com/">
-      <img src="https://skool.lol/img/yt.png" alt="Youtube icon">
-      <h2>Youtube</h2>
-    </div>
-    <div class="game" data-href="https://netflix.com/login">
-      <img src="https://skool.lol/img/ntfx.png" alt="Netflix icon">
-      <h2>Netflix</h2>
-    </div>
-    <div class="game" data-href="https://disneyplus.com/login">
-      <img src="https://skool.lol/img/dnp.png" alt="Disney+ icon">
-      <h2>Disney+</h2>
-    </div>
-    <div class="game" data-href="https://twitch.com/">
-      <img
-        src="https://images.fastcompany.net/image/upload/w_596,c_limit,q_auto:best,f_auto/wp-cms/uploads/2019/09/3-twitch-is-rebranding-for-the-first-time.jpg"
-        alt="Twitch icon">
-      <h2>Twitch</h2>
-    </div>
-    <div class="game" data-href="https://web.snapchat.com/">
-      <img src="https://assets.dryicons.com/uploads/icon/svg/8361/f80c84be-cee0-4dd1-812b-5894b06a8db7.svg"
-        alt="Snapchat icon">
-      <h2>Snapchat</h2>
-    </div>
-    <div class="game" data-href="https://spotify.com/">
-      <img src="https://developer.spotify.com/images/guidelines/design/icon4@2x.png" alt="Spotify icon">
-      <h2>Spotify</h2>
-    </div>
-    <div class="game" data-href="https://www.instagram.com/">
-      <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/132px-Instagram_logo_2016.svg.png"
-        alt="Instagram icon">
-      <h2>Instagram</h2>
-    </div>
-    <div class="game" data-href="https://www.google.com/gmail/">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Gmail_Icon.png/768px-Gmail_Icon.png"
-        alt="Gmail icon">
-      <h2>Gmail</h2>
-    </div>
-    <div class="game" data-href="https://www.primevideo.com/">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/11/Amazon_Prime_Video_logo.svg" alt="Prime Video icon">
-      <h2>Prime Video</h2>
-    </div>
-    <div class="game" data-href="https://www.soundcloud.com/">
-      <img
-        src="https://play-lh.googleusercontent.com/6FoFUmywGeblaF0iUTWb4EdH2SvXeOU_bgXQFRGhHTRiMWVlG8sAVN-BqjlWUJh3GR3a"
-        alt="SoundCloud icon">
-      <h2>SoundCloud</h2>
-    </div>
-
-  </div>
-  <script>
-    document.getElementById('search').addEventListener('input', function (e) {
-      var searchValue = e.target.value.toLowerCase();
-      var games = document.querySelectorAll('.game');
-      games.forEach(function (game) {
-        var gameTitle = game.querySelector('h2').textContent.toLowerCase();
-        if (gameTitle.includes(searchValue)) {
-          game.style.display = '';
-        } else {
-          game.style.display = 'none';
-        }
-      });
-    });
-  </script>
-  <script>
-    function encodeUVUrlWithPath(url) {
-      return encodeURIComponent(url);
-    }
-  
-    const buttons = document.querySelectorAll('.game');
-  
-    buttons.forEach(button => {
-      button.addEventListener('click', function() {
-        const url = this.getAttribute('data-href');
-        location.href = encodeUVUrlWithPath(url);
-      });
-    });
-  </script>
-</body>
-
-</html>
+	</div>
+</div>
+<script src="/assets/js/games.js"></script>

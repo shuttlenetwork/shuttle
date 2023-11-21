@@ -9,7 +9,6 @@ const splash = [
 	"Check our our github.",
 	"Shhh... we won't tell anyone you're here.",
 	"Join our discord for more links.",
-	"We have ads to pay for the servers.",
 	"Imagine not using shuttle",
 	"No website is out of your reach now.",
 	"Your online freedom, our promise.",
@@ -20,13 +19,9 @@ const splash = [
 	"try shittle toilet services"
 ];
 
-// Only display the loading animation if it is needed
 window.addEventListener("load", () => {
-	const loaderContainer = document.querySelector(".loader-container");
-	loaderContainer.style.opacity = "0";
-	setTimeout(() => loaderContainer.style.display = "none", 500);
 	document.querySelector("#splash").innerHTML = splash[Math.floor(Math.random() * (splash.length))];
-  });
+});
 
 frame.addEventListener("load", () => msg.innerText = frame.contentDocument.title);
 
@@ -36,19 +31,17 @@ document.getElementById("form").addEventListener("submit", (event) => {
 });
 
 function searchurl(url) {
-	switch (localStorage.getItem("search")) {
-		case "DuckDuckGo":
+	switch (localStorage.getItem("shuttle||search")) {
+		case "ddg":
 			proxy(`https://duckduckgo.com/?q=${url}`)
 			break;
-		case "Brave":
+		case "brave":
 			proxy(`https://search.brave.com/search?q=${url}`)
 			break;
-		case "Google":
+		default:
+		case "google":
 			proxy(`https://www.google.com/search?q=${url}`)
 			break;
-		default:
-			localStorage.setItem("search", "Google")
-			proxy(`https://google.com/search?q=${url}`)
 	}
 }
 
@@ -64,14 +57,24 @@ function isUrl(val = "") {
 	return false;
 }
 
-function proxy(url, dynamic = false) {
+function resolveURL(url) {
+	switch(localStorage.getItem("shuttle||proxy")) {
+		case "dy": 
+			return "/shuttle-dn/" + Ultraviolet.codec.xor.decode(url);
+		default:
+		case "uv":
+			return  __uv$config.prefix + __uv$config.encodeUrl(url);
+	}
+}
+
+function proxy(url) {
 	document.getElementById("align").style.display = "flex";
 	document.querySelector(".sidebar").style.display = "none";
 	registerSW().then(worker => {
 		if(!worker) {
 			return msg.innerHTML = "Error: Your browser does not support service workers or is blocking them (private browsing mode?), try using a different browser";
 		}
-		frame.src = dynamic ? "/shuttle-dn/" + __uv$config.encodeUrl(url): __uv$config.prefix + __uv$config.encodeUrl(url);
+		frame.src = resolveURL(url);
 	});
 }
 

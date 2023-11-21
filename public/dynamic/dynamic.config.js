@@ -1,13 +1,13 @@
 // See documentation for more information 
 
 self.__dynamic$config = {
-  prefix: '/shuttle-dn/',
-  encoding: 'xor',
-  mode: 'production',
+  prefix: "/shuttle-dn/",
+  encoding: "xor",
+  mode: "production",
   logLevel: 0,
   bare: {
     version: 2,
-    path: '/bare/',
+    path: "/bare/",
   },
   tab: {
     title: null,
@@ -15,12 +15,12 @@ self.__dynamic$config = {
     ua: null,
   },
   assets: {
-    prefix: '/dynamic/',
+    prefix: "/dynamic/",
     files: {
-      handler: 'dynamic.handler.js',
-      client: 'dynamic.client.js',
-      worker: 'dynamic.worker.js',
-      config: 'dynamic.config.js',
+      handler: "dynamic.handler.js",
+      client: "dynamic.client.js",
+      worker: "dynamic.worker.js",
+      config: "dynamic.config.js",
       inject: null,
     }
   },
