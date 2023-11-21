@@ -7,7 +7,6 @@ const dynamicPath = "./dynamic";
 
 const routes = [
 	["/", "index"],
-	["/science", "shuttletv"],
 	["/math", "games"],
 	["/physics", "apps"],
 	["/history", "chat"],
@@ -16,7 +15,6 @@ const routes = [
 
 const navItems = [
 	["/", "Home"],
-    ["/science", "TV"],
 	["/math", "Games"],
 	["/physics", "Apps"],
 	["/history", "Chat"],
