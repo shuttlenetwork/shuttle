@@ -1,29 +1,5 @@
-function changeSearch(target) {
-  switch (target.value) {
-    case "DuckDuckGo":
-      localStorage.setItem("search", "DuckDuckGo")
-      break;
-    case "Brave":
-      localStorage.setItem("search", "Brave");
-      break;
-    case "Google":
-      localStorage.setItem("search", "Google");
-      break;
-    default: 
-      localStorage.setItem("search", "Google")
-  }
-}
-function changeProxy(target) {
-  switch (target.value) {
-    case "Dynamic":
-      localStorage.setItem("proxy", "Dynamic");
-      break;
-    case "Ultraviolet":
-      localStorage.setItem("proxy", "Ultraviolet");
-      break;
-    default: 
-      localStorage.setItem("proxy", "Dynamic")
-  }
+function findSel(sel, name) {
+	return [...sel.querySelectorAll("option")].filter(e => e.value == name)[0];
 }
 
 function changeFavicon(value) {
@@ -36,32 +12,42 @@ function changeTitle(value) {
 	localStorage.setItem("shuttle||title", value);
 }
 
-function abc() {
-	window.open().document.body.innerHTML =`<iframe style="height:100%; width: 100%; border: none; position: fixed; top: 0; right: 0; left: 0; bottom: 0; border: none" sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation allow-top-navigation-by-user-activation" src="${window.location.href}"></iframe>`;
-	window.location = "https://google.com";
-}
+
+window.addEventListener("load", () => {
+	const searchSelector = document.getElementById("se");
+	const proxySelector = document.getElementById("proxy");
+	try {
+	const st = localStorage.getItem("shuttle||themehex");
+	if (st) document.querySelector("#colorPicker").value = savedTheme;
+	if(localStorage.getItem("shuttle||search")) findSel(searchSelector, localStorage.getItem("shuttle||search")).selected = true;
+	if(localStorage.getItem("shuttle||proxy")) findSel(proxySelector, localStorage.getItem("shuttle||proxy")).selected = true;
+	} catch {}
+	searchSelector.addEventListener("change", e => localStorage.setItem("shuttle||search", e.target.value));
+	proxySelector.addEventListener("change", e => localStorage.setItem("shuttle||proxy", e.target.value));
+	document.querySelector("#reset-theme").addEventListener("click", resetTheme);
+	document.querySelector("#abc").addEventListener("click", abc);
+	document.querySelector("#mystery-button").addEventListener("click", setFortniteMode);
+});
 
 function changeTheme(value) {
-  localStorage.setItem("themehex", value);
-  document.body.style.backgroundColor = value;
-  document.querySelector('#colorPicker').value = value;
+	localStorage.setItem("shuttle||themehex", value);
+	document.body.style.backgroundColor = value;
 }
 
 function resetTheme() {
-  localStorage.removeItem("themehex");
-  document.body.style.backgroundColor = "#0b0b0b";
-  document.querySelector('#colorPicker').value = "#0b0b0b";
+	localStorage.removeItem("shuttle||themehex");
+	document.body.style.backgroundColor = "#0b0b0b";
+	document.querySelector("#colorPicker").value = "#0b0b0b";
 }
 
-function initTheme() {
-  const savedTheme = localStorage.getItem("themehex");
-  if (savedTheme) {
-    document.body.style.backgroundColor = savedTheme;
-    document.querySelector('#colorPicker').value = savedTheme;
-  }
+function setFortniteMode() {
+	if (localStorage.getItem("shuttle||fortniteMode") === "activated") {
+		// If Fortnite Mode is already activated, deactivate it
+		document.body.style.backgroundImage = "";
+		localStorage.removeItem("shuttle||fortniteMode")
+	} else {
+		// Otherwise, activate it
+		document.body.style.backgroundImage = "url(\"https://i.ytimg.com/vi/6evDWowLMbE/maxresdefault.jpg\")";
+		localStorage.setItem("shuttle||fortniteMode", "activated");
+	}
 }
-
-window.addEventListener('load', initTheme);
-
-
-
