@@ -1,7 +1,7 @@
 {
-  "name": "shuttle",
+  "name": "xbox",
   "version": "3.0.0",
-  "description": "Experience the global internet using Shuttle, the swiftest and most uncluttered proxy solution. Relish a heightened level of privacy during your online sessions, free from censorship.",
+  "description": "Experience the global internet using Xbox, the swiftest and most uncluttered Web solution. Relish a heightened level of privacy during your online sessions, free from censorship.",
   "type": "module",
   "scripts": {
     "start": "node index.js"
@@ -15,7 +15,7 @@
   ],
   "author": "",
   "license": " GPL-3.0-or-later",
-  "homepage": "https://shuttleproxy.com",
+  "homepage": "https://xxx.com",
   "dependencies": {
     "@titaniumnetwork-dev/ultraviolet": "^2.0.0",
     "@tomphttp/bare-server-node": "^2.0.1",
