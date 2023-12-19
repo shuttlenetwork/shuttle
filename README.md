@@ -1,5 +1,5 @@
-# Shuttle V3 (beta)
-### V3 is still in beta, you may create pr's to clean up and make v3 better.
+# Shuttle V3
+### Shittle V3 🔥🔥🔥 bext prxy ever!
 
 [![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://github.com/shuttlenetwork/shuttle/wiki#how-to-deploy-to-onrender)
 [![Deploy to Cyclic](https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg)](https://app.cyclic.sh/api/app/deploy/shuttlenetwork/shuttle)
