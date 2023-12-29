@@ -122,15 +122,17 @@
 	align-items: center;
 	justify-content: center;
 	position: relative;
-	border-radius: 30px;
+	border-radius: 15px;
 	outline: none;
 	font-size: 16px;
 	padding: 8px;
 	height: 30px;
-	background-color: #1c1c1c;
+	background-color: transparent;
 	padding-right: 10px;
 	color: #616161;
 	width: 50%;
 	margin: 0 auto;
 	z-index: 5;
+	transition: width 0.5s ease, border-radius 0.5s ease, box-shadow 0.5s ease;
+	box-shadow: 0 0 10px rgba(119, 0, 255, 0.7), 0 0 20px rgba(49, 0, 128, 0.7); 
 }

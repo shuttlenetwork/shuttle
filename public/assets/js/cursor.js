@@ -6,8 +6,8 @@ var svg = d3.select("svg"),
 
 var delta = 0.001,
     i = 0, j,
-    n = 2000, // Total number of random points.
-    k = 20; // Number of points to replace per frame.
+    n = 500, // Total number of random points.
+    k = 2; // Number of points to replace per frame.
 
 var rx = d3.randomNormal(width / 2, 80),
     ry = d3.randomNormal(height / 2, 80),

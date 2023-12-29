@@ -9,7 +9,6 @@ const routes = [
 	["/", "index"],
 	["/math", "games"],
 	["/physics", "apps"],
-	["/history", "chat"],
 	["/settings", "settings"]
 ];
 
@@ -17,7 +16,6 @@ const navItems = [
 	["/", "Home"],
 	["/math", "Games"],
 	["/physics", "Apps"],
-	["/history", "Chat"],
 	["/settings", "Settings"]
 ];
 
@@ -43,13 +41,14 @@ app.use((_, res) => res.status(404).render("404"));
 const httpServer = createServer();
 
 httpServer.on("request", (req, res) => {
-	if (bare.shouldRoute(req)) bare.routeRequest(req, res); else 
-	app(req, res);
+	if (bare.shouldRoute(req)) bare.routeRequest(req, res);
+	else app(req, res);
 });
 
 httpServer.on("error", (err) => console.log(err));
 httpServer.on("upgrade", (req, socket, head) => {
-	if (bare.shouldRoute(req)) bare.routeUpgrade(req, socket, head); else socket.end();
+	if (bare.shouldRoute(req)) bare.routeUpgrade(req, socket, head);
+	else socket.end();
 });
 
 httpServer.listen({ port: process.env.PORT || 8080 }, () => {
