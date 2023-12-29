@@ -35,6 +35,14 @@
 		</a>
 		<%- navItems.map(([to, name])=> `<a href="${to}" class="${to === path ? " nav-active" : "nav-btn"}"><span>${name}</span></a>`).join(" "); %>
 		<a id="time" class="nav-btn" style="display: flex; justify-content: flex-end; margin-left: auto;"></a>
+		<div>
+			<input type="checkbox" class="checkbox" id="checkbox">
+			<label for="checkbox" class="checkbox-label">
+			  <i class="fas fa-moon"></i>
+			  <i class="fas fa-sun"></i>
+			  <span class="ball"></span>
+			</label>
+		  </div>
 	</div>
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
@@ -76,5 +84,38 @@
 
 		document.getElementById("time").innerHTML = year + "/" + month + "/" + day + " " + hours + ":" + minutes + ":" + seconds + " " + ampm;
 	}, 1000);
+
+const checkbox = document.getElementById("checkbox");
+const body = document.body;
+const darkMode = localStorage.getItem("darkMode");
+
+function setDarkMode() {
+	body.classList.add("dark");
+	checkbox.checked = true;
+}
+
+function setLightMode() {
+	body.classList.remove("dark");
+	checkbox.checked = false;
+}
+
+function toggleDarkMode() {
+	if (body.classList.contains("dark")) {
+		setLightMode();
+		localStorage.setItem("darkMode", "false");
+	} else {
+		setDarkMode();
+		localStorage.setItem("darkMode", "true");
+	}
+}
+
+checkbox.addEventListener("change", toggleDarkMode);
+
+if (darkMode === "true") {
+	setDarkMode();
+} else {
+	setLightMode();
+}
 </script>
+
 </html>

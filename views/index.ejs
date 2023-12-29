@@ -2,12 +2,16 @@
 	<nav id="nav">
 		<a onclick="exit()">
 			<i class="fa-solid fa-xmark"
-				style="color: white; margin-right: auto; margin-left: 20px; font-size: 24px;"></i>
+				style="color: white; margin-right: auto; margin-left: 20px; font-size: 24px;cursor: pointer;"></i>
 		</a>
 		<span id="m" style="margin: auto;"></span>
+		<a onclick="erudaToggle()">
+			<i class="fa-solid fa-code"
+				style="color: white; margin-left: auto; margin-right: 5px; font-size: 20px;cursor: pointer;"></i>
+		</a>
 		<a onclick="fullscreen()">
 			<i class="fa-solid fa-expand"
-				style="color: white; margin-left: auto; margin-right: 45px; font-size: 20px;"></i>
+				style="color: white; margin-left: auto; margin-right: 45px; font-size: 20px;cursor: pointer;"></i>
 		</a>
 	</nav>
 	<iframe id="ifr"></iframe>
@@ -60,7 +64,8 @@
 				const suggestionLink = document.createElement("a");
 				suggestionItem.classList = ["suggestions"];
 
-				suggestionLink.textContent = result.length > 23 ? result.slice(0, 23) + "..." : result;
+				const boldText = result.includes(searchText) ? `<strong>${searchText}</strong>` : searchText;
+				suggestionLink.innerHTML = result.replace(searchText, boldText);
 
 				suggestionLink.addEventListener("click", (event) => {
 					event.preventDefault();
@@ -84,7 +89,6 @@
 				fetchResults(searchText)
 			}
 			if (searchText.length < 1) {
-
 				document.getElementById("suggestions").style.display = "none";
 			} else {
 				document.getElementById("suggestions").style.display = "block";
@@ -104,3 +108,24 @@
 
 	window.addEventListener("load", () => abc());
 </script>
+<script>
+    var erudaScript = null; 
+
+    function erudaToggle() {
+        if (erudaScript) {
+            eruda.destroy(); 
+            erudaScript.parentNode.removeChild(erudaScript);
+            erudaScript = null;
+        } else {
+            erudaScript = document.createElement('script');
+            erudaScript.src = "https://cdn.jsdelivr.net/npm/eruda";
+            document.body.appendChild(erudaScript);
+            erudaScript.onload = function() {
+                eruda.init();
+				eruda.show();
+            };
+        }
+    }
+</script>
+
+
