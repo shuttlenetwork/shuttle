@@ -17,6 +17,7 @@
   "license": " GPL-3.0-or-later",
   "homepage": "https://shuttleproxy.com",
   "dependencies": {
+    "@nebula-services/dynamic": "^0.7.2-patch.2",
     "@titaniumnetwork-dev/ultraviolet": "^2.0.0",
     "@tomphttp/bare-server-node": "^2.0.1",
     "ejs": "^3.1.9",

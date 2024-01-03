@@ -1,5 +1,19 @@
 <link href="/assets/css/games.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<div id="align">
+	<nav id="nav">
+		<a onclick="exit()">
+			<i class="fa-solid fa-xmark"
+				style="color: white; margin-right: auto; margin-left: 20px; font-size: 24px;cursor: pointer;"></i>
+		</a>
+		<span id="m" style="margin: auto;"></span>
+		<a onclick="fullscreen()">
+			<i class="fa-solid fa-expand"
+				style="color: white; margin-left: auto; margin-right: 45px; font-size: 20px;cursor: pointer;"></i>
+		</a>
+	</nav>
+	<iframe id="ifr"></iframe>
+</div>
 <div class="games-body">
 	<h1 style="margin-top: 40px; z-index: 5;">Games</h1>
 	<formm id="formm">
@@ -7,7 +21,7 @@
 			style="cursor: inherit;">
 	</formm>
 	<div class="games">
-		<div class="game" data-href="https://nowgg.shuttledev.repl.co/sw.html">
+		<div class="game" data-href="https://nowgg.me/">
 			<img src="/shuttle.png" alt="now.gg logo">
 			<h2>now.gg</h2>
 		</div>
@@ -65,4 +79,5 @@
 		</div>
 	</div>
 </div>
+<script src="/assets/js/proxy.js"></script>
 <script src="/assets/js/games.js"></script>

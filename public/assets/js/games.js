@@ -14,6 +14,6 @@ document.getElementById("search").addEventListener("input", e => {
 document.querySelectorAll(".game").forEach(button => {
 	button.addEventListener("click", function () {
 		const url = this.getAttribute("data-href");
-		location.href = encodeUVUrlWithPath(url);
+		go(url);
 	});
 });

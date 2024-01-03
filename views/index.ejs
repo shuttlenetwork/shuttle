@@ -1,3 +1,4 @@
+<script src="/assets/js/proxy.js" defer></script>
 <div id="align">
 	<nav id="nav">
 		<a onclick="exit()">
@@ -44,88 +45,5 @@
 </div>
 <script src="/assets/js/home.js"></script>
 <script>
-	const searchInput = document.getElementById("search");
-	let debounceTimeout;
-	let isRequestPending = false;
-
-	async function fetchResults(searchText) {
-		try {
-			const response = await bare.fetch(`https://duckduckgo.com/ac/?q=${encodeURIComponent(searchText)}`);
-			const data = await response.json();
-			isRequestPending = false;
-			if (!Array.isArray(data)) {
-				console.log(`Error: Invalid response format. Expected Array (got ${typeof data})`);
-				return;
-			}
-			const suggestions = document.getElementById("suggestions");
-			suggestions.innerHTML = "";
-			for(const result of (data.map(r => r.phrase))) {
-				const suggestionItem = document.createElement("div");
-				const suggestionLink = document.createElement("a");
-				suggestionItem.classList = ["suggestions"];
-
-				const boldText = result.includes(searchText) ? `<strong>${searchText}</strong>` : searchText;
-				suggestionLink.innerHTML = result.replace(searchText, boldText);
-
-				suggestionLink.addEventListener("click", (event) => {
-					event.preventDefault();
-					searchurl(result);
-				});
-				suggestionItem.appendChild(suggestionLink);
-				suggestions.appendChild(suggestionItem);
-			}
-		} catch (e) {
-			isRequestPending = false;
-			console.error(e);
-		}
-	}
-
-	searchInput.addEventListener("input", (event) => {
-		clearTimeout(debounceTimeout);
-		const searchText = event.target.value;
-
-		debounceTimeout = setTimeout(() => {
-			if (searchText.length >= 1) {
-				fetchResults(searchText)
-			}
-			if (searchText.length < 1) {
-				document.getElementById("suggestions").style.display = "none";
-			} else {
-				document.getElementById("suggestions").style.display = "block";
-			}
-		}, 100);
-	});
-
-	const form = document.getElementById("form");
-
-	searchInput.addEventListener("input", (event) => {
-		const searchText = event.target.value;
-
-		if (searchText.trim().length > 0) {
-			form.focus();
-		}
-	});
-
-	window.addEventListener("load", () => abc());
+	//window.addEventListener("load", () => abc());
 </script>
-<script>
-    var erudaScript = null; 
-
-    function erudaToggle() {
-        if (erudaScript) {
-            eruda.destroy(); 
-            erudaScript.parentNode.removeChild(erudaScript);
-            erudaScript = null;
-        } else {
-            erudaScript = document.createElement('script');
-            erudaScript.src = "https://cdn.jsdelivr.net/npm/eruda";
-            document.body.appendChild(erudaScript);
-            erudaScript.onload = function() {
-                eruda.init();
-				eruda.show();
-            };
-        }
-    }
-</script>
-
-
