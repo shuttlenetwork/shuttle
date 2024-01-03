@@ -1,9 +1,8 @@
 import { createBareServer } from "@tomphttp/bare-server-node";
 import { createServer } from "node:http";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
+import { dynamicPath } from "@nebula-services/dynamic";
 import express from "express";
-
-const dynamicPath = "./dynamic";
 
 const routes = [
 	["/", "index"],

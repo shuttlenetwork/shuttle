@@ -3,11 +3,7 @@
 
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-	<meta property="og:title" content="shuttle" />
-	<meta property="og:description" content="s​h​ut​tle, the fa​stes​t p​ro​xy." />
-	<meta property="og:image" content="/shuttle.png" />
 	<meta name="theme-color" content="#000000" />
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="language" content="English" />
 
 	<title>Shuttle</title>
@@ -49,73 +45,4 @@
 	<%- include(page); %>
 	<svg height="100%" width="100%" style="position: fixed; z-index: 0;"></svg>
 </body>
-<script>
-	window.addEventListener("load", () => {
-		const savedTheme = localStorage.getItem("shuttle||themehex");
-		if (savedTheme) {
-			document.body.style.backgroundColor = savedTheme;
-		}
-		if (localStorage.getItem("shuttle||fortniteMode") === "activated") {
-			document.body.style.backgroundImage = "url(\"https://i.ytimg.com/vi/6evDWowLMbE/maxresdefault.jpg\")";
-		}
-	});
-	
-	// Why is this a thing
-	setInterval(() => {
-		var currentTime = new Date();
-
-		var year = currentTime.getFullYear();
-		var month = currentTime.getMonth() + 1; // Months are zero-based
-		var day = currentTime.getDate();
-
-		var hours = currentTime.getHours();
-		var minutes = currentTime.getMinutes();
-		var seconds = currentTime.getSeconds();
-
-		var ampm = hours >= 12 ? "PM" : "AM";
-
-		hours = (hours % 12) || 12;
-
-		month = (month < 10 ? "0" : "") + month;
-		day = (day < 10 ? "0" : "") + day;
-		hours = (hours < 10 ? "0" : "") + hours;
-		minutes = (minutes < 10 ? "0" : "") + minutes;
-		seconds = (seconds < 10 ? "0" : "") + seconds;
-
-		document.getElementById("time").innerHTML = year + "/" + month + "/" + day + " " + hours + ":" + minutes + ":" + seconds + " " + ampm;
-	}, 1000);
-
-const checkbox = document.getElementById("checkbox");
-const body = document.body;
-const darkMode = localStorage.getItem("darkMode");
-
-function setDarkMode() {
-	body.classList.add("dark");
-	checkbox.checked = true;
-}
-
-function setLightMode() {
-	body.classList.remove("dark");
-	checkbox.checked = false;
-}
-
-function toggleDarkMode() {
-	if (body.classList.contains("dark")) {
-		setLightMode();
-		localStorage.setItem("darkMode", "false");
-	} else {
-		setDarkMode();
-		localStorage.setItem("darkMode", "true");
-	}
-}
-
-checkbox.addEventListener("change", toggleDarkMode);
-
-if (darkMode === "true") {
-	setDarkMode();
-} else {
-	setLightMode();
-}
-</script>
-<script type='text/javascript' src='//imaginaryspooky.com/96/ed/2d/96ed2d5997f3d104c6968d954e833ee8.js'></script>
 </html>

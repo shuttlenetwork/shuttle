@@ -1,41 +1,41 @@
 window.bare = new Ultraviolet.BareClient(new URL(__uv$config.bare, window.location));
 
 function fullscreen() {
-  var elem = document.getElementById("ifr")
-  if (elem.requestFullscreen) {
-    elem.requestFullscreen();
-  } else if (elem.webkitRequestFullscreen) { /* Safari */
-    elem.webkitRequestFullscreen();
-  } else if (elem.msRequestFullscreen) { /* IE11 */
-    elem.msRequestFullscreen();
-  }
+	var elem = document.getElementById("ifr")
+	if (elem.requestFullscreen) {
+		elem.requestFullscreen();
+	} else if (elem.webkitRequestFullscreen) { /* Safari */
+		elem.webkitRequestFullscreen();
+	} else if (elem.msRequestFullscreen) { /* IE11 */
+		elem.msRequestFullscreen();
+	}
 }
 
 
 async function registerSW() {
-  await navigator.serviceWorker.register("/dynamic.sw-handler.js", {
-    scope: "/shuttle-dn",
-  });
-  const workerURL = "/uv.sw-handler.js";
-  const worker = await navigator.serviceWorker.getRegistration(workerURL, {
-    scope: "/shuttle-uv",
-  });
-  if (worker) return worker;
-  return navigator.serviceWorker.register(workerURL, { scope: __uv$config.prefix });
+	await navigator.serviceWorker.register("/dynamic.sw-handler.js", {
+		scope: "/shuttle-dn",
+	});
+	const workerURL = "/uv.sw-handler.js";
+	const worker = await navigator.serviceWorker.getRegistration(workerURL, {
+		scope: "/shuttle-uv",
+	});
+	if (worker) return worker;
+	return navigator.serviceWorker.register(workerURL, { scope: __uv$config.prefix });
 }
 
 function setFavicon(f) {
-  var link = document.querySelector("link[rel~='icon']");
-  if (!link) {
-    link = document.createElement("link");
-    link.rel = "icon";
-    document.head.appendChild(link);
-  }
-  link.href = f;
+	var link = document.querySelector("link[rel~='icon']");
+	if (!link) {
+		link = document.createElement("link");
+		link.rel = "icon";
+		document.head.appendChild(link);
+	}
+	link.href = f;
 }
 
 function encodeUVUrlWithPath(url = "") {
-  return __uv$config.prefix + __uv$config.encodeUrl(url);
+	return __uv$config.prefix + __uv$config.encodeUrl(url);
 }
 
 function abc() {
@@ -64,6 +64,66 @@ function abc() {
 registerSW();
 
 window.addEventListener("load", () => {
-  if (localStorage.getItem("shuttle||title")) document.title = localStorage.getItem("shuttle||title");
-  if (localStorage.getItem("shuttle||favicon")) setFavicon(localStorage.getItem("shuttle||favicon"));
+	if (localStorage.getItem("shuttle||title")) document.title = localStorage.getItem("shuttle||title");
+	if (localStorage.getItem("shuttle||favicon")) setFavicon(localStorage.getItem("shuttle||favicon"));
+
+	const savedTheme = localStorage.getItem("shuttle||themehex");
+	if (savedTheme) {
+		document.body.style.backgroundColor = savedTheme;
+	}
+	if (localStorage.getItem("shuttle||fortniteMode") === "activated") {
+		document.body.style.backgroundImage = "url(\"https://i.ytimg.com/vi/6evDWowLMbE/maxresdefault.jpg\")";
+	}
 });
+
+const checkbox = document.getElementById("checkbox");
+const darkMode = localStorage.getItem("shuttle||darkMode");
+
+function setLightMode(enable = true) {
+	enable ? document.body.classList.add("dark") : document.body.classList.remove("dark");
+	checkbox.checked = enable;
+}
+
+function toggleDarkMode() {
+	if (document.body.classList.contains("dark")) {
+		setLightMode(false);
+		localStorage.setItem("shuttle||darkMode", "false");
+	} else {
+		setLightMode(true);
+		localStorage.setItem("shuttle||darkMode", "true");
+	}
+}
+
+checkbox.addEventListener("change", toggleDarkMode);
+
+setLightMode(darkMode == "true");
+
+/**
+ * Why is this a thing
+ * @useless true
+ */
+function mostUselessFunction() {
+	var currentTime = new Date();
+
+	var year = currentTime.getFullYear();
+	var month = currentTime.getMonth() + 1; // Months are zero-based
+	var day = currentTime.getDate();
+
+	var hours = currentTime.getHours();
+	var minutes = currentTime.getMinutes();
+	var seconds = currentTime.getSeconds();
+
+	var ampm = hours >= 12 ? "PM" : "AM";
+
+	hours = (hours % 12) || 12;
+
+	month = (month < 10 ? "0" : "") + month;
+	day = (day < 10 ? "0" : "") + day;
+	hours = (hours < 10 ? "0" : "") + hours;
+	minutes = (minutes < 10 ? "0" : "") + minutes;
+	seconds = (seconds < 10 ? "0" : "") + seconds;
+
+	document.getElementById("time").innerHTML = year + "/" + month + "/" + day + " " + hours + ":" + minutes + ":" + seconds + " " + ampm;
+}
+
+setInterval(mostUselessFunction, 1000);

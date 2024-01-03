@@ -1,7 +1,10 @@
 const search = document.getElementById("search");
-const msg = document.getElementById("m");
-const frame = document.getElementById("ifr");
+const searchInput = document.getElementById("search");
+let debounceTimeout;
+let isRequestPending = false;
+var erudaScript; 
 
+/*
 const splash = [
 	"shuttle is so hot",
 	"Go ahead, browse your ex's social media profiles.",
@@ -22,69 +25,90 @@ const splash = [
 window.addEventListener("load", () => {
 	document.querySelector("#splash").innerHTML = splash[Math.floor(Math.random() * (splash.length))];
 });
-
-frame.addEventListener("load", () => msg.innerText = frame.contentDocument.title);
-
-document.getElementById("form").addEventListener("submit", (event) => {
-	event.preventDefault();
-	go(search.value);
-});
-
-function searchurl(url) {
-	switch (localStorage.getItem("shuttle||search")) {
-		case "ddg":
-			proxy(`https://duckduckgo.com/?q=${url}`)
-			break;
-		case "brave":
-			proxy(`https://search.brave.com/search?q=${url}`)
-			break;
-		default:
-		case "google":
-			proxy(`https://www.google.com/search?q=${url}`)
-			break;
-	}
-}
-
-function go(url) {
-	if (!isUrl(url)) searchurl(url); else {
-		if (!(url.startsWith("https://") || url.startsWith("http://"))) url = "http://" + url
-		proxy(url)
-	}
-}
-
-function isUrl(val = "") {
-	if (/^http(s?):\/\//.test(val) || val.includes(".") && val.substr(0, 1) !== " ") return true;
-	return false;
-}
-
-function resolveURL(url) {
-	switch(localStorage.getItem("shuttle||proxy")) {
-		case "dy": 
-			return "/shuttle-dn/" + Ultraviolet.codec.xor.decode(url);
-		default:
-		case "uv":
-			return  __uv$config.prefix + __uv$config.encodeUrl(url);
-	}
-}
-
-function proxy(url) {
-	document.getElementById("align").style.display = "flex";
-	document.querySelector(".sidebar").style.display = "none";
-	registerSW().then(worker => {
-		if(!worker) {
-			return msg.innerHTML = "Error: Your browser does not support service workers or is blocking them (private browsing mode?), try using a different browser";
-		}
-		frame.src = resolveURL(url);
-	});
-}
+*/
 
 window.addEventListener("DOMContentLoaded", () => {
 	const link = btoa(window.location.hash.slice(1));
 	if (link) go(link);
 });
 
-function exit() {
-	document.getElementById("align").style.display = "none";
-	document.querySelector(".sidebar").style.display = "";
-	frame.src = "";
+document.getElementById("form").addEventListener("submit", (event) => {
+	event.preventDefault();
+	go(search.value);
+});
+
+async function fetchResults(searchText) {
+	try {
+		const response = await bare.fetch(`https://duckduckgo.com/ac/?q=${encodeURIComponent(searchText)}`);
+		const data = await response.json();
+		isRequestPending = false;
+		if (!Array.isArray(data)) {
+			console.log(`Error: Invalid response format. Expected Array (got ${typeof data})`);
+			return;
+		}
+		const suggestions = document.getElementById("suggestions");
+		suggestions.innerHTML = "";
+		for(const result of (data.map(r => r.phrase))) {
+			const suggestionItem = document.createElement("div");
+			const suggestionLink = document.createElement("a");
+			suggestionItem.classList = ["suggestions"];
+
+			const boldText = result.includes(searchText) ? `<strong>${searchText}</strong>` : searchText;
+			suggestionLink.innerHTML = result.replace(searchText, boldText);
+
+			suggestionLink.addEventListener("click", (event) => {
+				event.preventDefault();
+				searchurl(result);
+			});
+			suggestionItem.appendChild(suggestionLink);
+			suggestions.appendChild(suggestionItem);
+		}
+	} catch (e) {
+		isRequestPending = false;
+		console.error(e);
+	}
+}
+
+searchInput.addEventListener("input", (event) => {
+	clearTimeout(debounceTimeout);
+	const searchText = event.target.value;
+
+	debounceTimeout = setTimeout(() => {
+		if (searchText.length >= 1) {
+			fetchResults(searchText)
+		}
+		if (searchText.length < 1) {
+			document.getElementById("suggestions").style.display = "none";
+		} else {
+			document.getElementById("suggestions").style.display = "block";
+		}
+	}, 100);
+});
+
+const form = document.getElementById("form");
+
+searchInput.addEventListener("input", (event) => {
+	const searchText = event.target.value;
+
+	if (searchText.trim().length > 0) {
+		form.focus();
+	}
+});
+
+function erudaToggle() {
+	var elem = document.getElementById("ifr");
+	
+	if (erudaScript) {
+		elem.contentWindow.eruda.destroy(); 
+		elem.removeChild(erudaScript);
+		erudaScript = undefined;
+	} else {
+		erudaScript = document.createElement("script");
+		erudaScript.src = "https://cdn.jsdelivr.net/npm/eruda";
+		elem.contentDocument.body.appendChild(erudaScript);
+		erudaScript.onload = function() {
+			elem.contentWindow.eruda.init();
+			elem.contentWindow.eruda.show();
+		};
+	}
 }
