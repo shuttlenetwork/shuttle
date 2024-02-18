@@ -1,5 +1,5 @@
-# Shuttle V3
-### Shittle V3 🔥🔥🔥 bext prxy ever!
+# Shuttle V5
+### Shittle V5 🔥🔥🔥 bext prxy ever!
 
 [![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://github.com/shuttlenetwork/shuttle/wiki#how-to-deploy-to-onrender)
 [![Deploy to Cyclic](https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg)](https://app.cyclic.sh/api/app/deploy/shuttlenetwork/shuttle)
@@ -19,8 +19,9 @@
 ```sh
 git clone https://github.com/shuttlenetwork/shuttle.git
 cd shuttle
-npm install
-npm start
+yarn
+yarn build
+yarn server
 ```
 ## Info 
 - If you are running this site on replit or other hosting platform that bans proxies, use [Shuttle Lite](https://github.com/shuttlenetwork/shuttle-lite)

@@ -1,27 +1,46 @@
 {
   "name": "shuttle",
-  "version": "3.0.0",
+  "version": "5.0.0",
   "description": "Experience the global internet using Shuttle, the swiftest and most uncluttered proxy solution. Relish a heightened level of privacy during your online sessions, free from censorship.",
   "type": "module",
   "scripts": {
-    "start": "node index.js"
+    "dev": "vite",
+    "build": "vite build",
+    "server": "node server.js",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shuttlenetwork/shuttle"
   },
-  "keywords": [
-    "proxy"
-  ],
   "author": "",
   "license": " GPL-3.0-or-later",
   "homepage": "https://shuttleproxy.com",
+  "devDependencies": {
+    "@fontsource/bebas-neue": "^5.0.18",
+    "@fontsource/montserrat": "^5.0.16",
+    "@fontsource/poppins": "^5.0.8",
+    "@sveltejs/vite-plugin-svelte": "^3.0.1",
+    "@tsconfig/svelte": "^5.0.2",
+    "@types/d3": "^7.4.3",
+    "@types/d3-hexbin": "^0.2.5",
+    "@types/serve-static": "^1.15.5",
+    "d3": "^7.8.5",
+    "d3-hexbin": "^0.2.2",
+    "posthog-js": "^1.106.0",
+    "svelte": "^4.2.8",
+    "svelte-check": "^3.6.2",
+    "svelte-routing": "^2.11.0",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8"
+  },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
     "@nebula-services/dynamic": "^0.7.2-patch.2",
     "@titaniumnetwork-dev/ultraviolet": "^2.0.0",
-    "@tomphttp/bare-server-node": "^2.0.1",
-    "ejs": "^3.1.9",
-    "express": "^4.18.1"
+    "@tomphttp/bare-client": "^2.2.0-alpha",
+    "express": "^4.18.2"
   },
   "engines": {
     "node": ">=18.0.0"

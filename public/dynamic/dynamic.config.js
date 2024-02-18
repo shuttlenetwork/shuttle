@@ -1,10 +1,10 @@
 // See documentation for more information 
 
 self.__dynamic$config = {
-  prefix: "/shuttle-dn/",
+  prefix: "/dynamic~service/",
   encoding: "xor",
   mode: "production",
-  logLevel: 0,
+  logLevel: 3,
   bare: {
     version: 2,
     path: "/bare/",
@@ -24,7 +24,5 @@ self.__dynamic$config = {
       inject: null,
     }
   },
-  block: [
-
-  ]
+  block: []
 };

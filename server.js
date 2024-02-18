@@ -3,39 +3,33 @@ import { createServer } from "node:http";
 import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { dynamicPath } from "@nebula-services/dynamic";
 import express from "express";
+import masqr from "@mercuryworkshop/masqrbackend";
 
-const routes = [
-	["/", "index"],
-	["/math", "games"],
-	["/physics", "apps"],
-	["/settings", "settings"]
-];
+const routes = ["/", "/math", "/physics", "/settings"];
 
-const navItems = [
-	["/", "Home"],
-	["/math", "Games"],
-	["/physics", "Apps"],
-	["/settings", "Settings"]
-];
+import { fileURLToPath } from "node:url";
+import { dirname } from "node:path";
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const bare = createBareServer("/bare/");
 const app = express();
 
-app.set("view engine", "ejs")
+app.use(masqr({
+	licenseServerUrl: "http://localhost:8004",
+	fail: (req, res) => {
+		res.end("fail!!!")
+	}
+}));
 
-app.use(express.static("./public"));
+app.use(express.static("./dist"));
 app.use("/uv/", express.static(uvPath));
 app.use("/dynamic/", express.static(dynamicPath))
 
 for (const [path, page] of routes) {
-	app.get(path, (_, res) => res.render("layout", {
-		path,
-		navItems,
-		page
-	}));
+	app.get(path, (_, res) => res.sendFile("./dist/index.html", { root: __dirname }));
 }
 
-app.use((_, res) => res.status(404).render("404"));
+app.use((_, res) => res.status(404).sendFile("./dist/index.html", { root: __dirname }));
 
 const httpServer = createServer();
 
