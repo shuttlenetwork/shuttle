@@ -1,5 +1,10 @@
-# Shuttle V5
-### Shittle V5 🔥🔥🔥 bext prxy ever!
+# Shuttle V4
+### Introducing Shuttle V4 - Your Premier Proxy Solution
+
+> [!IMPORTANT]
+> Please note that Shuttle V4 is still under development. We appreciate your patience and support.
+
+Deploy buttons for a variety of platforms are provided below:
 
 [![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://github.com/shuttlenetwork/shuttle/wiki#how-to-deploy-to-onrender)
 [![Deploy to Cyclic](https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg)](https://app.cyclic.sh/api/app/deploy/shuttlenetwork/shuttle)
@@ -10,18 +15,40 @@
 [![Deploy to Amplify Console](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/amplifyconsole.svg)](https://console.aws.amazon.com/amplify/home#/deploy?repo=https://github.com/shuttlenetwork/shuttle)
 [![Run on Google Cloud](https://raw.githubusercontent.com/BinBashBanana/deploy-buttons/master/buttons/remade/googlecloud.svg)](https://deploy.cloud.run/?git_repo=https://github.com/shuttlenetwork/shuttle)
 
-## Discord Server
+## Connect with Us on Discord
 
 [![Join us on Discord](https://invidget.switchblade.xyz/xi)](https://discord.gg/xi)
 
-## Setup
+## Step-by-Step Quick Start Guide
 
-```sh
-git clone https://github.com/shuttlenetwork/shuttle.git
-cd shuttle
-yarn
-yarn build
-yarn server
-```
-## Info 
-- If you are running this site on replit or other hosting platform that bans proxies, use [Shuttle Lite](https://github.com/shuttlenetwork/shuttle-lite)
+> [!TIP]
+> Follow these steps to quickly set up Shuttle V4.
+
+1. **Clone the Repository:** 
+   Use the following command to clone the Shuttle repository from GitHub:
+   ```
+   git clone https://github.com/shuttlenetwork/shuttle.git
+   ```
+2. **Navigate to the Shuttle Directory:** 
+   Change your current directory to the cloned Shuttle directory:
+   ```
+   cd shuttle
+   ```
+3. **Install Dependencies:** 
+   Use the Yarn package manager to install all necessary dependencies:
+   ```
+   yarn
+   ```
+4. **Build the Project:** 
+   Build the Shuttle project using the Yarn build command:
+   ```
+   yarn build
+   ```
+5. **Start the Server:** 
+   Run the Shuttle server with the following command:
+   ```
+   yarn server
+   ```
+
+> [!WARNING]
+> If you are running this site on replit or another hosting platform that prohibits proxies, consider using [Shuttle Lite](https://github.com/shuttlenetwork/shuttle-lite) instead to avoid potential issues.
