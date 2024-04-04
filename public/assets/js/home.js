@@ -28,7 +28,7 @@ window.addEventListener("load", () => {
 */
 
 window.addEventListener("DOMContentLoaded", () => {
-	const link = btoa(window.location.hash.slice(1));
+	const link = atob(window.location.hash.slice(1));
 	if (link) go(link);
 });
 
