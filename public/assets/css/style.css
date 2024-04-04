@@ -121,7 +121,6 @@ footer a:hover {
   border-radius: 15px;
   outline: none;
   font-size: 15px;
-  padding: 8px;
   height: 25px;
   background-color: transparent;
   padding-right: 10px;
@@ -129,14 +128,14 @@ footer a:hover {
   z-index: 1;
   width: 170px;
   transition: width 0.5s ease, border-radius 0.5s ease, box-shadow 0.5s ease;
-  box-shadow: 0 0 10px rgba(119, 0, 255, 0.7), 0 0 20px rgba(49, 0, 128, 0.7);
+  border: 1px solid #222222;
+  padding: 12px;
 }
 
 #form:hover {
   width: 230px;
   font-size: 16px;
   border-radius: 20px;
-  box-shadow: 0 0 15px rgb(140, 0, 255), 0 0 30px rgb(77, 0, 128);
 }
 
 #form:valid {
@@ -264,16 +263,7 @@ body {
   width: 100%;
   height: 80px;
   z-index: 1;
-  border-radius: 15px;
-  background: rgba(35, 37, 36, 0.1);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  -moz-backdrop-filter: blur(8px);
-  -ms-backdrop-filter: blur(8px);
-  -webkit-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.75);
-  box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.75);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid #222222;
 }
 
 .sidebar a {
@@ -638,13 +628,18 @@ iframe {
 }
 
 .logo-image {
-  max-width: 10%;
   height: auto;
   z-index: 1;
   pointer-events: none;
   user-select: none;
 }
 
+.logo-image h1 {
+  font-size: 2.5rem;
+  color: white !important;
+  font-family: 'Poppins', sans-serif !important;
+  text-align: center !important;
+}
 
 .header-container {
   display: flex;
@@ -657,7 +652,6 @@ iframe {
   margin-top: 10px;
   border-radius: 10px;
   transition: width 0.5s ease, border-radius 0.5s ease, box-shadow 0.5s ease;
-  box-shadow: 0 0 10px rgba(119, 0, 255, 0.7), 0 0 20px rgba(49, 0, 128, 0.7);
 }
 
 .suggestions a {
