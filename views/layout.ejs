@@ -17,12 +17,14 @@
 
 	<script src="/assets/js/index.js" defer></script>
 	<script src="/assets/js/particles.js" defer></script>
-	<script src="/assets/js/cursor.js" defer></script>
+
+	<script async src="//api.adinplay.com/libs/aiptag/pub/SHY/shuttleproxy.com/tag.min.js"></script>
 
 	<%- include("ads-head") %>
 </head>
 
 <body>
+	<div id="videoad"></div>
 	<div class="sidebar">
 		<a href="/" id="logo">
 			<img src="shuttle.png" alt="Logo">
@@ -43,6 +45,5 @@
 	<script src="https://d3js.org/d3.v4.min.js"></script>
 	<script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
 	<%- include(page); %>
-	<svg height="100%" width="100%" style="position: fixed; z-index: 0;"></svg>
 </body>
 </html>
