@@ -95,7 +95,6 @@ function show_videoad() {
 	if (typeof aiptag.adplayer !== 'undefined') {
 		aiptag.cmd.player.push(function() { aiptag.adplayer.startVideoAd(); });
 	} else {
-		alert("Ad Could not be loaded, load your content here");
 		aiptag.adplayer.aipConfig.AIP_COMPLETE();
 	}
 }
