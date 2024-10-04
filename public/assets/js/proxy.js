@@ -73,7 +73,7 @@ function resolveURL(url) {
 
 function proxy(url) {
     // Show the ad before proxying the URL
-    show_videoad();
+    show_videoad(url);
 
     document.getElementById("align").style.display = "flex";
     document.querySelector(".sidebar").style.display = "none";
@@ -91,7 +91,7 @@ function exit() {
 	frame.src = "";
 }
 
-function show_videoad() {
+function show_videoad(url) {
     if (typeof aiptag.adplayer !== 'undefined') {
         aiptag.cmd.player.push(function() {
             aiptag.adplayer.startVideoAd();
@@ -105,6 +105,5 @@ function show_videoad() {
             }
             frame.src = resolveURL(url);
         });
-        aiptag.adplayer.aipConfig.AIP_COMPLETE();
     }
 }
