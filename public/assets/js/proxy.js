@@ -25,7 +25,7 @@ aiptag.cmd.player.push(function() {
 			 Please do not remove the PREROLL_ELEM
 			 from the page, it will be hidden automaticly.
 			*/
-			
+
 			// alert("Video Ad Completed: " + state);
 		}
 	});
@@ -72,28 +72,17 @@ function resolveURL(url) {
 }
 
 function proxy(url) {
-    show_videoad()
-        .then(() => {
-            document.getElementById("align").style.display = "flex";
-            document.querySelector(".sidebar").style.display = "none";
-            registerSW().then(worker => {
-                if (!worker) {
-                    return msg.innerHTML = "Error: Your browser does not support service workers or is blocking them (private browsing mode?), try using a different browser";
-                }
-                frame.src = resolveURL(url);
-            });
-        })
-        .catch(() => {
-            console.warn("Ad failed to load, continuing without ad...");
-            document.getElementById("align").style.display = "flex";
-            document.querySelector(".sidebar").style.display = "none";
-            registerSW().then(worker => {
-                if (!worker) {
-                    return msg.innerHTML = "Error: Your browser does not support service workers or is blocking them (private browsing mode?), try using a different browser";
-                }
-                frame.src = resolveURL(url);
-            });
-        });
+    // Show the ad before proxying the URL
+    show_videoad();
+
+    document.getElementById("align").style.display = "flex";
+    document.querySelector(".sidebar").style.display = "none";
+    registerSW().then(worker => {
+        if(!worker) {
+            return msg.innerHTML = "Error: Your browser does not support service workers or is blocking them (private browsing mode?), try using a different browser";
+        }
+        frame.src = resolveURL(url);
+    });
 }
 
 function exit() {
@@ -103,9 +92,19 @@ function exit() {
 }
 
 function show_videoad() {
-	if (typeof aiptag.adplayer !== 'undefined') {
-		aiptag.cmd.player.push(function() { aiptag.adplayer.startVideoAd(); });
-	} else {
-		aiptag.adplayer.aipConfig.AIP_COMPLETE();
-	}
+    if (typeof aiptag.adplayer !== 'undefined') {
+        aiptag.cmd.player.push(function() {
+            aiptag.adplayer.startVideoAd();
+        });
+    } else {
+        document.getElementById("align").style.display = "flex";
+        document.querySelector(".sidebar").style.display = "none";
+        registerSW().then(worker => {
+            if (!worker) {
+                return msg.innerHTML = "Error: Your browser does not support service workers or is blocking them (private browsing mode?), try using a different browser";
+            }
+            frame.src = resolveURL(url);
+        });
+        aiptag.adplayer.aipConfig.AIP_COMPLETE();
+    }
 }
