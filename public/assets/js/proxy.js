@@ -72,17 +72,28 @@ function resolveURL(url) {
 }
 
 function proxy(url) {
-    // Show the ad before proxying the URL
-    show_videoad();
-
-    document.getElementById("align").style.display = "flex";
-    document.querySelector(".sidebar").style.display = "none";
-    registerSW().then(worker => {
-        if(!worker) {
-            return msg.innerHTML = "Error: Your browser does not support service workers or is blocking them (private browsing mode?), try using a different browser";
-        }
-        frame.src = resolveURL(url);
-    });
+    show_videoad()
+        .then(() => {
+            document.getElementById("align").style.display = "flex";
+            document.querySelector(".sidebar").style.display = "none";
+            registerSW().then(worker => {
+                if (!worker) {
+                    return msg.innerHTML = "Error: Your browser does not support service workers or is blocking them (private browsing mode?), try using a different browser";
+                }
+                frame.src = resolveURL(url);
+            });
+        })
+        .catch(() => {
+            console.warn("Ad failed to load, continuing without ad...");
+            document.getElementById("align").style.display = "flex";
+            document.querySelector(".sidebar").style.display = "none";
+            registerSW().then(worker => {
+                if (!worker) {
+                    return msg.innerHTML = "Error: Your browser does not support service workers or is blocking them (private browsing mode?), try using a different browser";
+                }
+                frame.src = resolveURL(url);
+            });
+        });
 }
 
 function exit() {
