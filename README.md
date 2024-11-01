@@ -1,5 +1,5 @@
 # Shuttle V3
-### Shittle V3 🔥🔥🔥 bext prxy ever!
+### Shittle V3 bext proxy ever 🔥🔥🔥
 
 [![Deploy to Render](https://binbashbanana.github.io/deploy-buttons/buttons/remade/render.svg)](https://github.com/shuttlenetwork/shuttle/wiki#how-to-deploy-to-onrender)
 [![Deploy to Cyclic](https://binbashbanana.github.io/deploy-buttons/buttons/remade/cyclic.svg)](https://app.cyclic.sh/api/app/deploy/shuttlenetwork/shuttle)
